@@ -1,0 +1,48 @@
+{
+  "name": "church-website",
+  "version": "1.0.0",
+  "description": "Everything a coding agent needs to build the [Church Name] website, from the blueprint to the finished design. It is set up for Claude Code and also works with Codex, Cursor, GitHub Copilot and other agents that read `AGENTS.md`.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "eslint .",
+    "start": "next start",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alabidavickie/church-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alabidavickie/church-website/issues"
+  },
+  "homepage": "https://github.com/alabidavickie/church-website#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.2",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "stripe": "^23.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.1"
+  }
+}
