@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<title>Today's Message</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF8F3}
+a{color:#0B1830}a:hover{color:#0B1830}
+.pg{color-scheme:only light;--ground:#FAF8F3;--tone:#EFEADF;--ink:#0B1830;--muted:#46526A;--gold:#E6A82A;--onnavy:#F4F1EA;--onnavy2:#B9C4D6;--focus:#0B1830;--fs-b:clamp(17px,1rem + .25vw,19px);--fs-l:clamp(20px,1.1rem + .7vw,26px);--fs-h:clamp(34px,1.2rem + 3vw,60px);--m:clamp(16px,4vw,56px);font-family:Figtree,system-ui,sans-serif;font-size:var(--fs-b);line-height:1.5;color:var(--ink);background:var(--ground);overflow-x:clip}
+.pg *{box-sizing:border-box}
+.d{font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.04em;line-height:.92}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--m)}
+.sec{padding:clamp(48px,6vw,96px) 0}
+.navy{background:var(--ink);color:var(--onnavy);--focus:#E6A82A}
+.pg a:focus-visible,.pg button:focus-visible,.pg input:focus-visible,.pg textarea:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px 999px 0 0;background:var(--gold);color:var(--ink);font:inherit;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:background-color .16s,color .16s}
+.btn:hover{background:var(--ink);color:var(--ground)}
+.navy .btn:hover{background:var(--ground);color:var(--ink)}
+.btn.sm{min-height:46px;padding:0 22px;font-size:16px}
+.btn[disabled]{background:#D9D2C2;color:#5A6375;cursor:not-allowed}
+.tl{color:inherit;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--gold);transition:text-decoration-thickness .16s}
+.tl:hover{text-decoration-thickness:4px;color:inherit}
+.hd{padding-top:14px;padding-bottom:6px}
+.hd-top{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.wm{display:flex;align-items:center;gap:12px;font-family:'League Spartan',Figtree,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.04em;color:var(--ink);text-decoration:none}
+.wm i{width:22px;height:28px;border-radius:11px 11px 0 0;background:var(--gold);display:block;flex-shrink:0}
+.menu{display:flex;flex-wrap:wrap;gap:0 26px;margin-top:6px}
+.menu a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:3px solid transparent;transition:border-color .16s}
+.menu a:hover,.menu a[aria-current]{border-color:var(--gold)}
+.top{padding:clamp(40px,5vw,72px) 0}
+.tg{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:end}
+.tg .tx{grid-column:1/9}
+.kick{font-size:clamp(24px,2.2vw,34px);margin:0 0 16px;color:var(--gold)}
+.h1{font-size:clamp(52px,6.4vw,104px);margin:0}
+.meta{margin:16px 0 0;color:var(--onnavy2)}
+.ta{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;margin-top:28px}
+.ta .tl{color:var(--onnavy)}
+.tg .side{grid-column:10/13;justify-self:end}
+.pill{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;background:#1F3458;color:var(--onnavy);font-weight:600;font-size:16px}
+.art{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.body{grid-column:3/11}
+.lead{font-size:var(--fs-l);line-height:1.4;margin:0 0 28px;font-weight:500}
+.body p{margin:0 0 20px;max-width:66ch}
+.pull{margin:36px 0;padding:36px 32px;background:var(--gold);color:var(--ink);border-radius:50% 50% 0 0/40% 40% 0 0;text-align:center}
+.pull blockquote{margin:0;font-size:clamp(22px,1.8vw,30px);line-height:1.3;font-weight:600}
+.pull figcaption{margin-top:12px;font-weight:700;font-size:15px}
+.apply{background:var(--tone);padding:28px 28px 8px;margin:32px 0 0}
+.apply h2{font-size:clamp(28px,2.4vw,38px);margin:0 0 16px}
+.apply ol{margin:0 0 20px;padding-left:22px}
+.apply li{margin:0 0 10px}
+.prev{background:var(--tone)}
+.cat{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 16px;margin-bottom:28px}
+.hh{font-size:var(--fs-h);margin:0}
+.cnt{color:var(--muted);font-weight:600}
+.plist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 40px}
+.pb{display:grid;grid-template-columns:72px minmax(0,1fr);gap:18px;align-items:start;width:100%;text-align:left;border:0;background:transparent;padding:14px 0;cursor:pointer;font:inherit;color:var(--ink)}
+.pb .ar{width:72px;height:84px;border-radius:36px 36px 0 0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px;font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.03em;font-size:17px;line-height:1;text-align:center}
+.pb strong{display:block;font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.03em;font-size:clamp(24px,2vw,30px);line-height:1.05}
+.pb .pm{display:block;color:var(--muted);font-size:15px;margin:4px 0 6px}
+.pb .ps{display:block;color:var(--ink);font-size:16px}
+.pb:hover strong{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:6px}
+.pb.on strong{color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:6px}
+.contact{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:28px;align-items:start}
+.ctx{grid-column:1/5}
+.ctx p{color:var(--onnavy2);margin:18px 0 0;max-width:34ch}
+.cf{grid-column:6/13;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fl{display:flex;flex-direction:column;gap:6px}
+.w2{grid-column:1/3}
+.fl label{font-size:15px;font-weight:600;color:var(--onnavy)}
+.in{height:52px;border:0;background:#1F3458;color:var(--onnavy);font:inherit;font-size:17px;padding:0 16px;border-radius:0}
+textarea.in{height:auto;min-height:140px;padding:14px 16px;resize:vertical}
+.ts{display:flex;align-items:center;gap:12px;height:60px;padding:0 16px;background:#1F3458;color:var(--onnavy);font-size:15px;font-weight:600;max-width:340px}
+.ts b{width:24px;height:24px;border:2px solid var(--onnavy2);display:block;flex-shrink:0}
+.done{grid-column:6/13}
+.done h3{font-size:var(--fs-h);margin:0 0 12px;color:var(--onnavy)}
+.done p{margin:0 0 20px;color:var(--onnavy2)}
+.foot{padding:40px 0 28px}
+.mark{display:flex;align-items:flex-end;gap:4px;height:110px}
+.mark i{flex:1;border-radius:999px 999px 0 0;display:block}
+.flast{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 32px;margin-top:32px;font-size:15px;color:var(--onnavy2)}
+.flast nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+.flast a{color:var(--onnavy)}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.tx{animation:rise .8s .05s cubic-bezier(.2,.7,.1,1) both}
+@media (prefers-reduced-motion: reduce){.pg *{animation:none!important;transition:none!important}}
+@media (max-width: 960px){
+.sec{padding:44px 0}
+.hd-top{min-height:52px}
+.wm{font-size:24px}
+.menu{gap:0 18px;margin-top:4px}
+.menu a{font-size:16px;min-height:42px}
+.tg,.art,.contact{display:block}
+.tg .side{display:none}
+.h1{font-size:14vw}
+.pull{padding:28px 20px;border-radius:50% 50% 0 0/24% 24% 0 0}
+.apply{padding:22px 18px 4px}
+.plist{grid-template-columns:1fr}
+.pb{grid-template-columns:56px minmax(0,1fr);gap:14px}
+.pb .ar{width:56px;height:66px;border-radius:28px 28px 0 0;font-size:14px}
+.cf{grid-template-columns:1fr;margin-top:24px}
+.w2{grid-column:auto}
+.done{margin-top:24px}
+}
+.ck{position:fixed;left:16px;bottom:16px;z-index:60;width:min(560px,calc(100vw - 32px));max-height:calc(100svh - 32px);overflow:auto;background:var(--ink,#0B1830);color:var(--onnavy,#F4F1EA);border-radius:28px 28px 0 0;box-shadow:0 0 0 1px rgba(244,241,234,.22),0 22px 60px rgba(0,0,0,.45);padding:28px 28px 24px;font-size:16px;line-height:1.5;text-align:left;--focus:#E6A82A}
+.ck h2{font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.03em;line-height:1;font-size:30px;margin:0 0 10px;color:var(--gold,#E6A82A)}
+.ck p{margin:0 0 18px;color:var(--onnavy2,#B9C4D6)}
+.ck a{color:var(--onnavy,#F4F1EA);text-decoration:underline;text-underline-offset:3px}
+.ckb{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ckbtn{flex:1 1 130px;min-height:50px;padding:0 14px;white-space:nowrap;border:0;border-radius:999px 999px 0 0;font:inherit;font-weight:700;cursor:pointer;transition:background-color .16s,color .16s}
+.ckbtn.yes{background:var(--gold,#E6A82A);color:var(--ink,#0B1830)}
+.ckbtn.no{background:var(--onnavy,#F4F1EA);color:var(--ink,#0B1830)}
+.ckbtn.yes:hover{background:#F2BE52}
+.ckbtn.no:hover{background:#FFFFFF}
+.cktl{background:none;border:0;padding:14px 0 0;font:inherit;font-weight:600;color:var(--onnavy,#F4F1EA);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.ckl{list-style:none;margin:0 0 18px;padding:0}
+.ckl li{display:flex;gap:16px;justify-content:space-between;align-items:flex-start;padding:14px 0;border-top:1px solid rgba(244,241,234,.16)}
+.ckl strong{display:block;color:var(--onnavy,#F4F1EA)}
+.ckl span{display:block;font-size:14px;color:var(--onnavy2,#B9C4D6)}
+.sw{flex-shrink:0;width:52px;height:30px;margin-top:2px;border-radius:999px;border:0;background:#3A4A66;position:relative;cursor:pointer;padding:0}
+.sw::after{content:"";position:absolute;top:4px;left:4px;width:22px;height:22px;border-radius:50%;background:#F4F1EA;transition:transform .15s}
+.sw[aria-checked="true"]{background:var(--gold,#E6A82A)}
+.sw[aria-checked="true"]::after{transform:translateX(22px);background:var(--ink,#0B1830)}
+.sw:disabled{opacity:.55;cursor:default}
+.cklink{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-align:left}
+.flast .cklink{color:var(--onnavy,#F4F1EA)}
+.fc .cklink{color:var(--onnavy2,#B9C4D6);text-decoration:none}
+.fc .cklink:hover{color:var(--onnavy,#F4F1EA);text-decoration:underline}
+@media (max-width:600px){.ck{left:8px;bottom:8px;width:calc(100vw - 16px);padding:22px 18px 18px;border-radius:22px 22px 0 0}.ck h2{font-size:26px}}
+.cu{position:fixed;right:16px;bottom:16px;z-index:40;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border:0;border-radius:999px 999px 0 0;background:var(--gold,#E6A82A);color:var(--ink,#0B1830);font:inherit;font-weight:700;cursor:pointer;box-shadow:0 0 0 2px var(--ground,#FAF8F3),0 8px 24px rgba(11,24,48,.25);transition:background-color .16s,color .16s}
+.cu:hover{background:var(--ink,#0B1830);color:var(--gold,#E6A82A)}
+.tk{position:fixed;right:16px;bottom:80px;z-index:45;width:min(370px,calc(100vw - 24px));height:min(520px,calc(100svh - 110px));display:flex;flex-direction:column;background:var(--ground,#FAF8F3);color:var(--ink,#0B1830);border-radius:24px 24px 0 0;box-shadow:0 18px 50px rgba(11,24,48,.3);overflow:hidden;font-size:16px;line-height:1.5;text-align:left}
+.tkh{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 14px 16px 22px;background:var(--ink,#0B1830);color:var(--onnavy,#F4F1EA)}
+.tkh strong{display:block;font-size:17px}
+.tkh span{display:block;font-size:14px;color:var(--onnavy2,#B9C4D6)}
+.tkx{width:42px;height:42px;flex-shrink:0;border:0;border-radius:50%;background:transparent;color:var(--onnavy,#F4F1EA);cursor:pointer;display:grid;place-items:center}
+.tkx:hover{background:rgba(244,241,234,.12)}
+.tkb{flex:1;overflow:auto;padding:18px;display:flex;flex-direction:column;gap:10px}
+.tkb p{margin:0;max-width:85%;padding:10px 14px;line-height:1.4}
+.tkb .them{align-self:flex-start;background:var(--tone,#EFEADF);border-radius:16px 16px 16px 4px}
+.tkb .me{align-self:flex-end;background:var(--ink,#0B1830);color:var(--onnavy,#F4F1EA);border-radius:16px 16px 4px 16px}
+.tkb .tkm,.tkb .tkm2{max-width:none;padding:0}
+.tkb .tkm2{color:var(--muted,#46526A);font-size:15px}
+.tkb .ckbtn{flex:0 0 auto}
+.tkf{display:flex;gap:8px;align-items:flex-end;padding:12px;border-top:1px solid var(--tone,#EFEADF)}
+.tkf textarea{flex:1;min-width:0;resize:none;border:1px solid #CFC8B8;border-radius:12px;padding:10px 12px;font:inherit;font-size:16px;min-height:46px;background:#fff;color:var(--ink,#0B1830)}
+.tks{min-height:46px;padding:0 18px;border:0;border-radius:999px 999px 0 0;background:var(--gold,#E6A82A);color:var(--ink,#0B1830);font:inherit;font-weight:700;cursor:pointer}
+.tks[disabled]{opacity:.5;cursor:not-allowed}
+.tkn{margin:0;padding:0 14px 12px;font-size:13px;color:var(--muted,#46526A)}
+@media (max-width:960px){.cu{min-height:46px;padding:0 16px;font-size:16px;right:12px;bottom:12px}.tk{right:12px;bottom:70px}}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.stk{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,248,243,.97);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 1px 0 rgba(11,24,48,.08),0 8px 24px rgba(11,24,48,.08);animation:stkin .22s ease-out}
+@keyframes stkin{from{transform:translateY(-100%)}to{transform:none}}
+.stk-in{max-width:1360px;margin:0 auto;padding:0 var(--m,16px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:24px;min-height:64px}
+.stk-wm{display:flex;align-items:center;gap:10px;min-height:44px;font-family:'League Spartan',Figtree,sans-serif;font-weight:700;font-size:22px;letter-spacing:-.04em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.stk-wm i{width:16px;height:21px;border-radius:8px 8px 0 0;background:var(--gold);display:block;flex-shrink:0}
+.stk-menu{display:flex;gap:0 22px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.stk-menu::-webkit-scrollbar{display:none}
+.stk-menu a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:16px;color:var(--ink);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap;transition:border-color .16s}
+.stk-menu a:hover,.stk-menu a[aria-current]{border-color:var(--gold)}
+.stk-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px 999px 0 0;background:var(--gold);color:var(--ink);font-weight:700;text-decoration:none;white-space:nowrap;transition:background-color .16s,color .16s}
+.stk-btn:hover{background:var(--ink);color:var(--ground,#FAF8F3)}
+.pg [id]{scroll-margin-top:116px}
+@media (max-width:1100px){
+.stk-in{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"wm btn" "menu menu";gap:0 16px;min-height:0;padding-top:6px}
+.stk-wm{grid-area:wm;font-size:20px}
+.stk-btn{grid-area:btn;min-height:40px;padding:0 16px;font-size:15px}
+.stk-menu{grid-area:menu;margin:0 calc(-1 * var(--m,16px));padding:0 var(--m,16px);-webkit-mask:linear-gradient(90deg,#000 88%,transparent);mask:linear-gradient(90deg,#000 88%,transparent)}
+.stk-menu a{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.stk{animation:none}}
+@media (max-width:960px){
+.flast nav a,.flast .cklink{display:inline-flex;align-items:center;min-height:44px}
+.fc a,.fc .cklink{display:inline-flex;align-items:center;min-height:36px}
+}
+.hd-r{display:flex;align-items:center;gap:20px}
+.srch{display:inline-flex;align-items:center;gap:8px;min-height:44px;min-width:44px;justify-content:center;font-weight:600;color:var(--ink);text-decoration:none}
+.srch:hover span{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:6px}
+@media (max-width:600px){.srch span{display:none}.hd-r{gap:6px}.hd .hd-top{gap:10px}.hd .wm{font-size:clamp(18px,5.4vw,24px);gap:8px;white-space:nowrap}.hd .wm i{width:16px;height:21px}.srch{min-width:40px}.hd-r .btn.sm{padding:0 14px;font-size:15px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl">
+<div class="pg">
+<header class="wrap hd">
+<div class="hd-top">
+<a class="wm" href="index.html"><i aria-hidden="true"></i>[church name]</a>
+<div class="hd-r"><a class="srch" href="search.html" aria-label="Search"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span>Search</span></a><a class="btn sm" href="offerings.html">Offering</a></div>
+</div>
+<nav class="menu" aria-label="Main">
+<a href="todays-message.html" aria-current="page">Today's Message</a>
+<a href="index.html#week">Services</a>
+<a href="bible-study.html">Bible Study</a>
+<a href="sermons.html">Sermons</a>
+<a href="events.html">Events</a>
+<a href="prayer.html">Prayer</a>
+<a href="testimonies.html">Testimonies</a>
+<a href="im-new.html">I'm New</a>
+</nav>
+</header>
+<sc-if value="{{stk.show}}">
+<div class="stk">
+<div class="stk-in">
+<a class="stk-wm" href="index.html"><i aria-hidden="true"></i>[church name]</a>
+<nav class="stk-menu" aria-label="Main menu, compact">
+<a href="todays-message.html" aria-current="page">Today's Message</a>
+<a href="index.html#week">Services</a>
+<a href="bible-study.html">Bible Study</a>
+<a href="sermons.html">Sermons</a>
+<a href="events.html">Events</a>
+<a href="prayer.html">Prayer</a>
+<a href="testimonies.html">Testimonies</a>
+<a href="im-new.html">I'm New</a>
+</nav>
+<a class="stk-btn" href="offerings.html">Offering</a>
+</div>
+</div>
+</sc-if>
+
+<main>
+<section class="navy top" id="message" aria-labelledby="h-title">
+<div class="wrap tg">
+<div class="tx">
+<p class="d kick">{{kicker}}</p>
+<h1 id="h-title" class="d h1">{{m.title}}</h1>
+<p class="meta">{{m.date}} · [Pastor's name] · {{m.passage}}</p>
+<div class="ta"><a class="btn" href="sermons.html">Watch this sermon</a><a class="tl" href="#previous">Previous messages</a><a class="tl" href="#contact">Write to us</a></div>
+</div>
+<div class="side"><span class="pill">{{m.minutes}}</span></div>
+</div>
+</section>
+
+<section class="sec" aria-label="The message">
+<div class="wrap art">
+<div class="body">
+<p class="lead">{{m.synopsis}}</p>
+<sc-for list="{{m.paras}}" as="p" hint-placeholder-count="4">
+<p>{{p.text}}</p>
+</sc-for>
+<figure class="pull">
+<blockquote>{{m.verse}}</blockquote>
+<figcaption>{{m.verseRef}}</figcaption>
+</figure>
+<div class="apply">
+<h2 class="d">this week</h2>
+<ol>
+<sc-for list="{{m.steps}}" as="s" hint-placeholder-count="3">
+<li>{{s.text}}</li>
+</sc-for>
+</ol>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec prev" id="previous" aria-labelledby="h-prev">
+<div class="wrap">
+<div class="cat"><h2 id="h-prev" class="d hh">previous messages</h2><span class="cnt">Tap a message to read it</span></div>
+<ul class="plist">
+<sc-for list="{{list}}" as="x" hint-placeholder-count="5">
+<li><a class="pb {{x.cls}}" href="#message" onClick="{{x.pick}}" aria-current="{{x.current}}" style="text-decoration: none"><span class="ar" style="{{x.arStyle}}" aria-hidden="true">{{x.short}}</span><span><strong>{{x.title}}</strong><span class="pm">{{x.date}} · {{x.passage}}</span><span class="ps">{{x.synopsis}}</span></span></a></li>
+</sc-for>
+</ul>
+</div>
+</section>
+
+<section class="sec navy" id="contact" aria-labelledby="h-contact">
+<div class="wrap contact">
+<div class="ctx">
+<h2 id="h-contact" class="d hh">questions about this message?</h2>
+<p>Write to the pastoral team. We read every message and reply by email, usually within a few days.</p>
+</div>
+<sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}">
+<form class="cf">
+<div class="fl"><label for="c-name">Your name</label><input id="c-name" class="in" type="text" autocomplete="name"></div>
+<div class="fl"><label for="c-email">Email</label><input id="c-email" class="in" type="email" autocomplete="email"></div>
+<div class="fl w2"><label for="c-msg">Your message</label><textarea id="c-msg" class="in"></textarea></div>
+<div class="ts w2"><b aria-hidden="true"></b><span>Verify you are human</span></div>
+<div class="w2"><button type="button" class="btn" onClick="{{send}}">Send message</button></div>
+</form>
+</sc-if>
+<sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+<div class="done" aria-live="polite"><h3 class="d">thank you</h3><p>Your message reached the pastoral team. We'll reply to the email you gave us.</p><button type="button" class="btn sm" onClick="{{again}}">Send another</button></div>
+</sc-if>
+</div>
+</section>
+</main>
+
+<footer class="navy foot">
+<div class="wrap">
+<div class="mark" aria-hidden="true"><i style="height: 62%; background: #E6A82A"></i><i style="height: 86%; background: #16294A"></i><i style="height: 100%; background: #EFEADF"></i><i style="height: 74%; background: #2B4470"></i><i style="height: 92%; background: #E6A82A"></i><i style="height: 68%; background: #EFEADF"></i><i style="height: 100%; background: #16294A"></i><i style="height: 80%; background: #E6A82A"></i><i style="height: 58%; background: #2B4470"></i></div>
+<div class="flast"><span>© 2026 [Church Name] · 6400B Frederick Road, Catonsville, MD 21228</span><nav aria-label="Footer"><a href="index.html">Home</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="offerings.html">Offering</a><a href="login.html">Log in</a><button type="button" class="cklink" onClick="{{openCookies}}">Cookie settings</button></nav></div>
+</div>
+</footer>
+<sc-if value="{{cu.open}}">
+<section class="tk" id="tawk" aria-label="Contact us chat">
+<div class="tkh"><div><strong>[Church Name]</strong><span>We usually reply within a few minutes</span></div><button type="button" class="tkx" aria-label="Minimise chat" onClick="{{cu.toggle}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+<sc-if value="{{cu.allowed}}">
+<div class="tkb" aria-live="polite">
+<sc-for list="{{cu.msgs}}" as="m" hint-placeholder-count="1"><p class="{{m.cls}}">{{m.text}}</p></sc-for>
+</div>
+<div class="tkf"><label class="sr" for="tk-in">Your message</label><textarea id="tk-in" rows="2" placeholder="Type your message" value="{{cu.draft}}" onInput="{{cu.type}}"></textarea><button type="button" class="tks" onClick="{{cu.send}}" disabled="{{cu.cantSend}}">Send</button></div>
+<p class="tkn">Preview. The live site shows the Tawk.to chat here.</p>
+</sc-if>
+<sc-if value="{{cu.blocked}}">
+<div class="tkb">
+<p class="tkm">Live chat is run by Tawk.to, which uses cookies. Allow live chat to start a conversation with the church.</p>
+<button type="button" class="ckbtn yes" onClick="{{cu.allow}}">Allow live chat</button>
+<p class="tkm2">Or email us at [Email address], or call [Phone number].</p>
+</div>
+</sc-if>
+</section>
+</sc-if>
+<sc-if value="{{cu.launcher}}">
+<button type="button" class="cu" aria-expanded="{{cu.expanded}}" aria-controls="tawk" onClick="{{cu.toggle}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span>{{cu.label}}</span></button>
+</sc-if>
+<sc-if value="{{ck.open}}">
+<section class="ck" role="dialog" aria-modal="false" aria-labelledby="ck-h" aria-describedby="ck-d">
+<h2 id="ck-h">your privacy</h2>
+<sc-if value="{{ck.simple}}">
+<p id="ck-d">We use cookies to keep this site safe and working. With your permission, we would also like to use them for live chat (Tawk.to), for videos, posts and maps from YouTube, Facebook, Instagram and Google, and to count visits with Google Analytics. We never sell your data. <a href="privacy.html">Privacy policy</a></p>
+<div class="ckb"><button type="button" class="ckbtn yes" onClick="{{ck.all}}">Accept all</button><button type="button" class="ckbtn no" onClick="{{ck.none}}">Reject all</button></div>
+<button type="button" class="cktl" onClick="{{ck.custom}}">Choose which cookies</button>
+</sc-if>
+<sc-if value="{{ck.detail}}">
+<p id="ck-d">Choose what you are happy with. You can change this at any time from Cookie settings at the bottom of the page. <a href="privacy.html">Privacy policy</a></p>
+<ul class="ckl">
+<li><div><strong>Needed for the site</strong><span>Security checks (Cloudflare Turnstile), secure giving (Stripe) and remembering this choice. Always on.</span></div><button type="button" class="sw" role="switch" aria-checked="true" aria-label="Needed for the site, always on" disabled></button></li>
+<sc-for list="{{ck.rows}}" as="r" hint-placeholder-count="3"><li><div><strong>{{r.name}}</strong><span>{{r.desc}}</span></div><button type="button" class="sw" role="switch" aria-checked="{{r.on}}" aria-label="{{r.name}}" onClick="{{r.flip}}"></button></li></sc-for>
+</ul>
+<div class="ckb"><button type="button" class="ckbtn yes" onClick="{{ck.save}}">Save my choices</button><button type="button" class="ckbtn no" onClick="{{ck.all}}">Accept all</button></div>
+</sc-if>
+</section>
+</sc-if>
+</div>
+</template>
+<noscript><p style="padding:24px;font-family:system-ui,sans-serif">Please turn on JavaScript to view this page.</p></noscript>
+<script>
+/* Tiny page runtime: fills the page template from the page's data and keeps it up to date. */
+(function () {
+  var WHOLE = /^\s*\{\{\s*([^{}]+?)\s*\}\}\s*$/;
+  var ANY = /\{\{\s*([^{}]+?)\s*\}\}/g;
+
+  function lookup(scope, path) {
+    path = path.trim();
+    if (path === 'true') return true;
+    if (path === 'false') return false;
+    if (path === 'null') return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    if (/^(['"]).*\1$/.test(path)) return path.slice(1, -1);
+    var parts = path.split('.');
+    var v = scope;
+    for (var i = 0; i < parts.length; i++) {
+      if (v == null) return undefined;
+      v = v[parts[i]];
+    }
+    return v;
+  }
+
+  function fill(str, scope) {
+    return str.replace(ANY, function (m, p) {
+      var v = lookup(scope, p);
+      return v == null ? '' : String(v);
+    });
+  }
+
+  function build(node, scope, out) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      out.push(document.createTextNode(t.indexOf('{{') > -1 ? fill(t, scope) : t));
+      return;
+    }
+    if (node.nodeType !== 1) return;
+    var tag = node.localName;
+    if (tag === 'sc-for') {
+      var m = (node.getAttribute('list') || '').match(WHOLE);
+      var list = (m && lookup(scope, m[1])) || [];
+      var as = node.getAttribute('as') || 'item';
+      list.forEach(function (item, i) {
+        var s = Object.create(scope);
+        s[as] = item;
+        s.$index = i;
+        node.childNodes.forEach(function (c) { build(c, s, out); });
+      });
+      return;
+    }
+    if (tag === 'sc-if') {
+      var mv = (node.getAttribute('value') || '').match(WHOLE);
+      if (mv && lookup(scope, mv[1])) node.childNodes.forEach(function (c) { build(c, scope, out); });
+      return;
+    }
+    var el = node.cloneNode(false);
+    el.__h = {};
+    Array.prototype.slice.call(el.attributes).forEach(function (a) {
+      var name = a.name;
+      var val = a.value;
+      if (name.indexOf('hint-') === 0) { el.removeAttribute(name); return; }
+      if (val.indexOf('{{') === -1) return;
+      var w = val.match(WHOLE);
+      if (w) {
+        var v = lookup(scope, w[1]);
+        if (name.indexOf('on') === 0) {
+          el.removeAttribute(name);
+          if (typeof v === 'function') el.__h[name.slice(2)] = v;
+          return;
+        }
+        if (v === false || v == null) el.removeAttribute(name);
+        else if (v === true) el.setAttribute(name, '');
+        else el.setAttribute(name, String(v));
+      } else {
+        el.setAttribute(name, fill(val, scope));
+      }
+    });
+    if (el.localName === 'textarea' && el.hasAttribute('value')) el.value = el.getAttribute('value');
+    var kids = [];
+    node.childNodes.forEach(function (c) { build(c, scope, kids); });
+    kids.forEach(function (k) { el.appendChild(k); });
+    if (el.localName === 'select' && el.hasAttribute('value')) el.value = el.getAttribute('value');
+    out.push(el);
+  }
+
+  function firstClass(el) {
+    return ((el.getAttribute && el.getAttribute('class')) || '').split(' ')[0];
+  }
+
+  function same(a, b) {
+    if (a.nodeType !== b.nodeType) return false;
+    if (a.nodeType !== 1) return true;
+    return a.localName === b.localName && a.namespaceURI === b.namespaceURI && firstClass(a) === firstClass(b) && (a.id || '') === (b.id || '');
+  }
+
+  // Matches old and new children so that a block appearing or disappearing
+  // does not rebuild everything after it (which would lose focus and typing).
+  function morphChildren(oldP, list) {
+    for (var i = 0; i < list.length; i++) {
+      var n = list[i];
+      var o = oldP.childNodes[i];
+      if (!o) { oldP.appendChild(n); continue; }
+      if (!same(o, n)) {
+        var j, ahead = -1, behind = -1;
+        for (j = i + 1; j < Math.min(list.length, i + 10); j++) { if (same(o, list[j])) { ahead = j; break; } }
+        if (ahead > -1 && o.nodeType === 1) { oldP.insertBefore(n, o); continue; }
+        for (j = i + 1; j < Math.min(oldP.childNodes.length, i + 10); j++) { if (same(oldP.childNodes[j], n)) { behind = j; break; } }
+        if (behind > -1 && n.nodeType === 1) {
+          for (var k = i; k < behind; k++) oldP.removeChild(oldP.childNodes[i]);
+          o = oldP.childNodes[i];
+        } else if (ahead > -1) {
+          oldP.insertBefore(n, o);
+          continue;
+        } else {
+          oldP.replaceChild(n, o);
+          continue;
+        }
+      }
+      if (o.nodeType === 3) { if (o.nodeValue !== n.nodeValue) o.nodeValue = n.nodeValue; continue; }
+      morphEl(o, n);
+    }
+    while (oldP.childNodes.length > list.length) oldP.removeChild(oldP.lastChild);
+  }
+
+  function morphEl(o, n) {
+    Array.prototype.slice.call(o.attributes).forEach(function (a) {
+      if (!n.hasAttribute(a.name)) o.removeAttribute(a.name);
+    });
+    Array.prototype.slice.call(n.attributes).forEach(function (a) {
+      if (o.getAttribute(a.name) !== a.value) o.setAttribute(a.name, a.value);
+    });
+    o.__h = n.__h;
+    if ((o.localName === 'input' || o.localName === 'textarea' || o.localName === 'select') && n.hasAttribute('value') && o !== document.activeElement && o.value !== n.getAttribute('value')) {
+      o.value = n.getAttribute('value');
+    }
+    if (o.localName === 'textarea' || o.localName === 'input' || o.localName === 'select') return;
+    morphChildren(o, Array.prototype.slice.call(n.childNodes));
+  }
+
+  var app, tpl, comp, queued = false;
+
+  function render() {
+    queued = false;
+    var vals = comp.renderVals();
+    var out = [];
+    tpl.content.childNodes.forEach(function (c) { build(c, vals, out); });
+    morphChildren(app, out);
+  }
+
+  function schedule() {
+    if (queued) return;
+    queued = true;
+    Promise.resolve().then(render);
+  }
+
+  window.PageLogic = function PageLogic(props) {
+    this.props = props || {};
+    this.state = {};
+  };
+  window.PageLogic.prototype.setState = function (p) {
+    var u = typeof p === 'function' ? p(this.state, this.props) : p;
+    this.state = Object.assign({}, this.state, u);
+    schedule();
+  };
+  window.PageLogic.prototype.forceUpdate = function () { schedule(); };
+
+  window.__boot = function (Component, props) {
+    app = document.getElementById('app');
+    tpl = document.getElementById('tpl');
+    comp = new Component(props || {});
+    ['click', 'input', 'change'].forEach(function (type) {
+      app.addEventListener(type, function (e) {
+        var t = e.target;
+        while (t && t !== app) {
+          if (t.__h && t.__h[type]) { t.__h[type](e); break; }
+          t = t.parentNode;
+        }
+      });
+    });
+    render();
+    if (typeof comp.componentDidMount === 'function') comp.componentDidMount();
+  };
+})();
+</script>
+<script>
+class Component extends PageLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sel: 0, sent: false };
+  }
+  pageVals(consent) {
+    const msgs = [
+      {
+        title: 'faith on the road', short: 'oct 25', date: 'Sunday, October 25', passage: 'Luke 24:13–35', minutes: '6 min read', bg: '#E6A82A', fg: '#0B1830',
+        synopsis: 'Two friends walked away from Jerusalem with their hopes in pieces, and Jesus walked beside them before they knew who he was. He still meets us on ordinary roads, opens the Scriptures to us, and turns us back toward home.',
+        paras: [
+          'On the evening of the first Easter, two disciples were walking from Jerusalem to a village called Emmaus, about seven miles away. They were not really walking toward anything. They were walking away: away from the cross, away from the other disciples, away from a hope that had died on Friday. “We trusted,” one of them says, “that it had been he which should have redeemed Israel.”',
+          'Then a stranger falls into step beside them. Luke tells us it was Jesus, but “their eyes were holden that they should not know him.” He does not begin with an announcement. He begins with a question: what are you talking about as you walk? He lets them tell him the whole sad story first.',
+          'Only then does he open the Scriptures. Beginning at Moses and all the prophets, he shows them that the cross was not the end of God’s plan but the center of it. They still do not recognize him until they reach the house, sit down to eat, and he takes the bread, gives thanks, breaks it and gives it to them. In that ordinary moment, at an ordinary table, their eyes are opened.',
+          'And the same evening, in the dark, they walk all seven miles back to Jerusalem to tell the others. The road that carried them away from hope becomes the road that carries them home.',
+          'Most of our week happens on roads like that one: the drive down Frederick Road, the commute, the walk from the car to the hospital doors. Jesus is not waiting for us to reach a holy place before he joins us. He walks beside us in our disappointment, he speaks through his Word, and he makes himself known around ordinary tables.'
+        ],
+        verse: 'Did not our heart burn within us, while he talked with us by the way, and while he opened to us the scriptures?', verseRef: 'Luke 24:32 (KJV)',
+        steps: ['Read Luke 24:13–35 slowly, once in the morning and once at night.', 'Tell God honestly what you had hoped for, and where you feel let down.', 'Share a meal with someone this week and look for the Lord at the table.']
+      },
+      {
+        title: 'the god who sees', short: 'oct 18', date: 'Sunday, October 18', passage: 'Genesis 16:1–13', minutes: '5 min read', bg: '#2B4470', fg: '#F4F1EA',
+        synopsis: 'Hagar ran into the wilderness with nobody on her side, and there the angel of the Lord found her by a spring of water. She gave God a name: the God who sees me.',
+        paras: [
+          'Hagar had no say in her own story. She was given to Abram, mistreated by Sarai, and finally ran away into the desert, pregnant and alone. If anyone in Genesis had reason to feel invisible, it was her.',
+          'Yet the angel of the Lord finds her by a fountain of water on the way to Shur. He calls her by name, asks where she has come from and where she is going, and gives her a promise for her son. Hagar answers by naming God: “Thou God seest me.” Whoever you are, and however unseen you feel this week, the same God sees you.'
+        ],
+        verse: 'And she called the name of the LORD that spake unto her, Thou God seest me.', verseRef: 'Genesis 16:13 (KJV)',
+        steps: ['Read Genesis 16 and notice every question the angel asks.', 'Name one place where you feel unseen, and pray about it by name.', 'Look out for someone at church who may feel invisible, and greet them.']
+      },
+      {
+        title: 'come and rest', short: 'oct 11', date: 'Sunday, October 11', passage: 'Matthew 11:28–30', minutes: '4 min read', bg: '#EFEADF', fg: '#0B1830',
+        synopsis: 'Jesus does not invite the strong and the organized. He invites the weary and the heavy laden, and offers a yoke that is easy and a burden that is light.',
+        paras: [
+          'Many of us carry more than we were made to carry: work, family, worry, and the quiet pressure to look as if we are coping. Jesus’ invitation is short and plain: come unto me.',
+          'He does not promise a life without a yoke. He offers his own yoke instead, shared with someone who is meek and lowly in heart. Rest, in his words, is something we find as we learn from him.'
+        ],
+        verse: 'Come unto me, all ye that labour and are heavy laden, and I will give you rest.', verseRef: 'Matthew 11:28 (KJV)',
+        steps: ['Write down what is weighing on you, and bring the list to God.', 'Keep one hour this week free of screens and noise.', 'Ask someone you trust to pray with you about one burden.']
+      },
+      {
+        title: 'a table for all', short: 'oct 4', date: 'Sunday, October 4', passage: 'Luke 14:15–24', minutes: '5 min read', bg: '#0B1830', fg: '#E6A82A',
+        synopsis: 'In the parable of the great supper, the invited guests make excuses, so the master sends his servant into the streets and lanes for the poor, the maimed, the halt and the blind. The table is still being filled.',
+        paras: [
+          'Every guest on the first list had a reason not to come: a field, some oxen, a new marriage. None of the excuses was wicked. They were simply busy with good things.',
+          'So the master opens the door wider. The servant goes into the streets and lanes, then out to the highways and hedges, until the house is full. The church on Frederick Road is meant to be that kind of house, with room at the table for anyone who comes.'
+        ],
+        verse: 'Go out quickly into the streets and lanes of the city, and bring in hither the poor, and the maimed, and the halt, and the blind.', verseRef: 'Luke 14:21 (KJV)',
+        steps: ['Read Luke 14:15–24 and list the excuses in your own life.', 'Invite one person to Sunday service or to a meal.', 'Pray for neighbors on your street by name.']
+      },
+      {
+        title: 'planted by the water', short: 'sep 27', date: 'Sunday, September 27', passage: 'Psalm 1', minutes: '4 min read', bg: '#E6A82A', fg: '#0B1830',
+        synopsis: 'Psalm 1 pictures a life like a tree planted by the rivers of water, fruitful in its season and green when the weather turns. We talked about the daily habits that keep our roots near the stream.',
+        paras: [
+          'The psalm begins with a contrast: the one who walks in the counsel of the ungodly, and the one whose delight is in the law of the Lord and who meditates on it day and night.',
+          'Trees do not grow by trying harder. They grow because their roots reach water. Daily time in God’s Word and in prayer is how we stay planted, so that our leaf does not wither when hard seasons come.'
+        ],
+        verse: 'And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither.', verseRef: 'Psalm 1:3 (KJV)',
+        steps: ['Read Psalm 1 each morning this week.', 'Choose a fixed time and place for daily Bible reading.', 'Join the Tuesday Bible study on Zoom.']
+      }
+    ];
+    const sel = this.state.sel;
+    const cur = msgs[sel];
+    const m = {
+      ...cur,
+      paras: cur.paras.map((t) => ({ text: t })),
+      steps: cur.steps.map((t) => ({ text: t }))
+    };
+    const list = msgs.map((x, i) => ({
+      ...x,
+      cls: i === sel ? 'on' : '',
+      current: i === sel ? 'true' : 'false',
+      arStyle: 'background: ' + x.bg + '; color: ' + x.fg,
+      pick: () => this.setState({ sel: i })
+    }));
+    return {
+      m,
+      kicker: sel === 0 ? 'today’s message' : 'an earlier message',
+      list,
+      notSent: !this.state.sent,
+      sent: this.state.sent,
+      send: () => this.setState({ sent: true }),
+      again: () => this.setState({ sent: false })
+    };
+  }
+  ckRead() {
+    try {
+      const v = JSON.parse(window.localStorage.getItem('church-consent-v1') || 'null');
+      if (v && typeof v === 'object') return v;
+    } catch (e) {}
+    return null;
+  }
+  ckSet(v) {
+    const rec = { chat: !!v.chat, media: !!v.media, analytics: !!v.analytics, at: new Date().toISOString() };
+    try { window.localStorage.setItem('church-consent-v1', JSON.stringify(rec)); } catch (e) {}
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { analytics_storage: rec.analytics ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      }
+    } catch (e) {}
+    this._ckSaved = rec;
+    this.setState({ ckOpen: false, ckView: 'simple', ckDraft: null });
+  }
+  consentVals() {
+    if (!this._ckLoaded) { this._ckLoaded = true; this._ckSaved = this.ckRead(); }
+    const saved = this._ckSaved;
+    const open = !saved || !!this.state.ckOpen;
+    const view = this.state.ckView || 'simple';
+    const draft = this.state.ckDraft || saved || { chat: false, media: false, analytics: false };
+    const defs = [
+      ['chat', 'Live chat', 'Tawk.to, for the Contact us chat.'],
+      ['media', 'Videos, posts and maps', 'The YouTube live stream and sermons, Facebook and Instagram posts, and Google Maps.'],
+      ['analytics', 'Visit counts', 'Google Analytics, so we can see which pages help people. No advertising.']
+    ];
+    const rows = defs.map(([k, name, desc]) => ({
+      name, desc,
+      on: draft[k] ? 'true' : 'false',
+      flip: () => this.setState({ ckDraft: Object.assign({}, draft, { [k]: !draft[k] }) })
+    }));
+    return {
+      ck: {
+        open, rows,
+        simple: view === 'simple',
+        detail: view === 'detail',
+        all: () => this.ckSet({ chat: true, media: true, analytics: true }),
+        none: () => this.ckSet({ chat: false, media: false, analytics: false }),
+        custom: () => this.setState({ ckView: 'detail', ckDraft: draft }),
+        save: () => this.ckSet(draft)
+      },
+      chatAllowed: !!(saved && saved.chat),
+      openCookies: () => this.setState({ ckOpen: true, ckView: 'detail', ckDraft: null })
+    };
+  }
+  contactVals(consent) {
+    const msgs = this.state.cuMsgs || [{ cls: 'them', text: 'Hello, and welcome. How can we help today? Ask about a visit, prayer, giving or anything else.' }];
+    const draft = this.state.cuDraft || '';
+    const isOpen = !!this.state.cuOpen && !consent.ck.open;
+    return {
+      cu: {
+        launcher: !consent.ck.open,
+        open: isOpen,
+        expanded: isOpen ? 'true' : 'false',
+        label: isOpen ? 'Close' : 'Contact us',
+        toggle: () => this.setState({ cuOpen: !this.state.cuOpen }),
+        allowed: consent.chatAllowed,
+        blocked: !consent.chatAllowed,
+        msgs, draft,
+        cantSend: !draft.trim(),
+        type: (e) => this.setState({ cuDraft: e.target.value }),
+        send: () => {
+          const t = draft.trim();
+          if (!t) return;
+          const next = msgs.concat([{ cls: 'me', text: t }]);
+          if (!msgs.some((m) => m.cls === 'me')) next.push({ cls: 'them', text: 'Thank you. Someone from the church will answer here shortly. If we are away, leave your email and we will write back.' });
+          this.setState({ cuDraft: '', cuMsgs: next });
+        },
+        allow: () => this.ckSet(Object.assign({}, this._ckSaved || {}, { chat: true }))
+      },
+      openContact: () => this.setState({ cuOpen: true })
+    };
+  }
+  stickyVals() {
+    if (!this._stkInit && typeof window !== 'undefined') {
+      this._stkInit = true;
+      const check = () => {
+        const hd = document.querySelector('header.hd');
+        if (!hd) return;
+        const s = hd.getBoundingClientRect().bottom < 0;
+        if (s !== !!this._stk) { this._stk = s; this.setState({ stkTick: Date.now() }); }
+      };
+      window.addEventListener('scroll', check, { passive: true });
+      window.addEventListener('resize', check);
+      setTimeout(check, 0);
+    }
+    return { stk: { show: !!this._stk } };
+  }
+  renderVals() {
+    const c = this.consentVals();
+    return Object.assign({}, this.pageVals(c), c, this.contactVals(c), this.stickyVals());
+  }
+}
+window.__boot(Component, {});
+</script>
+</body>
+</html>

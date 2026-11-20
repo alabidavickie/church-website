@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<title>Testimonies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF8F3}
+a{color:#0B1830}a:hover{color:#0B1830}
+.pg{color-scheme:only light;--ground:#FAF8F3;--tone:#EFEADF;--ink:#0B1830;--muted:#46526A;--gold:#E6A82A;--navy2:#16294A;--onnavy:#F4F1EA;--onnavy2:#B9C4D6;--ok:#1F6A50;--okt:#E3F1EC;--bad:#8E2F23;--badt:#FBE7E4;--focus:#0B1830;--fs-s:14px;--fs-b:clamp(17px,1rem + .25vw,19px);--fs-l:clamp(20px,1.1rem + .7vw,26px);--fs-h:clamp(34px,1.2rem + 3vw,60px);--m:clamp(16px,4vw,56px);font-family:Figtree,system-ui,sans-serif;font-size:var(--fs-b);line-height:1.5;color:var(--ink);background:var(--ground);overflow-x:clip}
+.pg *{box-sizing:border-box}
+.d{font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.04em;line-height:.92}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--m)}
+.sec{padding:clamp(48px,6vw,96px) 0}
+.navy{background:var(--ink);color:var(--onnavy);--focus:#E6A82A}
+.toneb{background:var(--tone)}
+.pg a:focus-visible,.pg button:focus-visible,.pg input:focus-visible,.pg textarea:focus-visible,.pg select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px 999px 0 0;background:var(--gold);color:var(--ink);font:inherit;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:background-color .16s,color .16s}
+.btn:hover{background:var(--ink);color:var(--ground)}
+.navy .btn:hover{background:var(--ground);color:var(--ink)}
+.btn.sm{min-height:46px;padding:0 22px;font-size:16px}
+.btn.ink{background:var(--ink);color:var(--ground)}
+.btn.ink:hover{background:var(--gold);color:var(--ink)}
+.btn[disabled]{background:#D9D2C2;color:#5A6375;cursor:not-allowed}
+.tl{color:inherit;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--gold);transition:text-decoration-thickness .16s;background:none;border:0;padding:0;font:inherit;cursor:pointer}
+.tl:hover{text-decoration-thickness:4px;color:inherit}
+.hd{padding-top:14px;padding-bottom:6px}
+.hd-top{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.wm{display:flex;align-items:center;gap:12px;font-family:'League Spartan',Figtree,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.04em;color:var(--ink);text-decoration:none}
+.wm i{width:22px;height:28px;border-radius:11px 11px 0 0;background:var(--gold);display:block;flex-shrink:0}
+.menu{display:flex;flex-wrap:wrap;gap:0 26px;margin-top:6px}
+.menu a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:3px solid transparent;transition:border-color .16s}
+.menu a:hover,.menu a[aria-current]{border-color:var(--gold)}
+.top{padding:clamp(40px,5vw,72px) 0}
+.kick{font-size:clamp(24px,2.2vw,34px);margin:0 0 16px;color:var(--gold)}
+.h1{font-size:clamp(52px,6.4vw,104px);margin:0}
+.intro{font-size:var(--fs-l);line-height:1.4;margin:20px 0 0;max-width:40ch;color:var(--onnavy2)}
+.hh{font-size:var(--fs-h);margin:0}
+.muted{color:var(--muted)}
+.fl{display:flex;flex-direction:column;gap:6px}
+.fl label,.lb{font-size:15px;font-weight:700;color:var(--ink)}
+.fl .hint{font-size:14px;color:var(--muted);margin:0}
+.fl .err{font-size:14px;color:var(--bad);font-weight:600;margin:0}
+.in{height:54px;width:100%;border:1.5px solid #D9D2C2;background:#fff;color:var(--ink);font:inherit;font-size:17px;padding:0 16px;border-radius:0}
+.in:focus{border-color:var(--ink)}
+textarea.in{height:auto;min-height:140px;padding:14px 16px;resize:vertical}
+select.in{appearance:auto}
+.navy .fl label,.navy .lb{color:var(--onnavy)}
+.navy .in{background:#1F3458;border-color:#1F3458;color:var(--onnavy)}
+.ts{display:flex;align-items:center;gap:12px;min-height:60px;padding:0 16px;background:var(--tone);border:0;font:inherit;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;width:100%;max-width:360px;text-align:left}
+.ts b{width:24px;height:24px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#fff}
+.ts.ok b{background:#1F6A50;border-color:#1F6A50;color:#fff}
+.navy .ts{background:#1F3458;color:var(--onnavy)}
+.navy .ts b{border-color:var(--onnavy2);background:transparent}
+.chk{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:none;border:0;padding:4px 0;font:inherit;font-size:16px;color:inherit;cursor:pointer}
+.chk b{width:24px;height:24px;border:2px solid currentColor;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;background:#fff;color:var(--ink)}
+.chk[aria-checked="true"] b{background:var(--ink);border-color:var(--ink);color:#fff}
+.chk span a{font-weight:700}
+.pillx{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;font-size:13px;font-weight:700;border-radius:999px}
+.p-ok{background:var(--okt);color:var(--ok)}
+.p-wait{background:#FAEBC7;color:#6B4A07}
+.p-chg{background:#E6EEF8;color:#1D4E89}
+.p-bad{background:var(--badt);color:var(--bad)}
+.note{background:var(--tone);padding:18px 20px;font-size:16px}
+.ok-box{background:var(--okt);color:var(--ok);padding:16px 18px;font-weight:600}
+.foot{padding:40px 0 28px}
+.mark{display:flex;align-items:flex-end;gap:4px;height:110px}
+.mark i{flex:1;border-radius:999px 999px 0 0;display:block}
+.flast{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 32px;margin-top:32px;font-size:15px;color:var(--onnavy2)}
+.flast nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+.flast a{color:var(--onnavy)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:var(--ground);padding:12px 18px;z-index:70}
+.skip:focus{left:8px}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.rise{animation:rise .8s .05s cubic-bezier(.2,.7,.1,1) both}
+@media (prefers-reduced-motion: reduce){.pg *{animation:none!important;transition:none!important}}
+.hd-r{display:flex;align-items:center;gap:20px}
+.srch{display:inline-flex;align-items:center;gap:8px;min-height:44px;min-width:44px;justify-content:center;font-weight:600;color:var(--ink);text-decoration:none}
+.srch:hover span{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:6px}
+@media (max-width:600px){.srch span{display:none}.hd-r{gap:6px}.hd .hd-top{gap:10px}.hd .wm{font-size:clamp(18px,5.4vw,24px);gap:8px;white-space:nowrap}.hd .wm i{width:16px;height:21px}.srch{min-width:40px}.hd-r .btn.sm{padding:0 14px;font-size:15px}}
+@media (max-width: 960px){
+.sec{padding:44px 0}
+.hd{padding-top:10px}
+.hd-top{min-height:52px}
+.wm{font-size:24px}
+.menu{gap:0 18px;margin-top:4px}
+.menu a{font-size:16px;min-height:42px}
+.h1{font-size:13vw}
+.ts{max-width:none}
+}
+.ptop{padding:clamp(40px,5vw,72px) 0 clamp(40px,5vw,64px)}
+.ptop .row1{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px 32px}
+.ptop .intro{margin-top:16px}
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:32px;align-items:start}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 18px;border:2px solid var(--ink);background:transparent;font:inherit;font-weight:700;font-size:16px;color:var(--ink);border-radius:22px 22px 0 0;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+.chip span{font-weight:500;opacity:.75;margin-left:6px}
+.sech{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;margin-bottom:28px}
+.vid{position:relative;aspect-ratio:16/9;background:#0E1B33;color:var(--onnavy);display:flex;align-items:center;justify-content:center;overflow:hidden;--focus:#E6A82A}
+.vid .play{width:84px;height:84px;border-radius:50%;background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center}
+.vid .cap{position:absolute;left:16px;bottom:12px;font-size:14px;color:var(--onnavy2)}
+.gate{padding:24px;text-align:center;max-width:46ch}
+.gate p{margin:0 0 16px;color:var(--onnavy2);font-size:16px}
+.gate .acts{display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:center;align-items:center}
+.gate .tl{color:var(--onnavy)}
+.livep{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:0 12px;background:#B3261E;color:#fff;font-weight:700;font-size:14px;border-radius:16px 16px 0 0}
+.livep i{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.ff{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ff .w2{grid-column:1/3}
+.sent{background:var(--okt);padding:28px}
+.sent h3{font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.03em;font-size:clamp(28px,2.4vw,40px);margin:0 0 10px;color:var(--ok)}
+.sent p{margin:0 0 16px}
+.sample{display:inline-block;font-size:14px;font-weight:600;color:var(--muted);background:var(--tone);padding:6px 12px;margin:0 0 20px}
+@media (max-width:960px){.g12{display:block}.g12>*+*{margin-top:32px}.ff{grid-template-columns:1fr}.ff .w2{grid-column:auto}}
+.tgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.tc{background:#fff;border:1px solid #E6DFD0;display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:24px}
+.tc .ar{height:150px;border-radius:60px 60px 0 0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.02em;font-size:17px;text-align:center;line-height:1}
+.tc h3{font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.03em;font-size:clamp(26px,2vw,32px);line-height:1.02;margin:0 0 10px}
+.tc .body{margin:0 0 12px;font-size:17px}
+.tc .who{margin:0 0 12px;font-size:15px;color:var(--muted)}
+.tc .who b{color:var(--ink)}
+.share{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
+.share .tx{grid-column:1/8}
+.share .tx p{margin:14px 0 0;color:var(--onnavy2);max-width:46ch}
+.share .ac{grid-column:9/13;justify-self:end}
+@media (max-width:960px){.tgrid{grid-template-columns:1fr}.share{display:block}.share .ac{margin-top:24px}}
+@media (max-width:560px){.tc{grid-template-columns:1fr}.tc .ar{height:90px;width:120px}}
+.ck{position:fixed;left:16px;bottom:16px;z-index:60;width:min(560px,calc(100vw - 32px));max-height:calc(100svh - 32px);overflow:auto;background:var(--ink,#0B1830);color:var(--onnavy,#F4F1EA);border-radius:28px 28px 0 0;box-shadow:0 0 0 1px rgba(244,241,234,.22),0 22px 60px rgba(0,0,0,.45);padding:28px 28px 24px;font-size:16px;line-height:1.5;text-align:left;--focus:#E6A82A}
+.ck h2{font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.03em;line-height:1;font-size:30px;margin:0 0 10px;color:var(--gold,#E6A82A)}
+.ck p{margin:0 0 18px;color:var(--onnavy2,#B9C4D6)}
+.ck a{color:var(--onnavy,#F4F1EA);text-decoration:underline;text-underline-offset:3px}
+.ckb{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ckbtn{flex:1 1 130px;min-height:50px;padding:0 14px;white-space:nowrap;border:0;border-radius:999px 999px 0 0;font:inherit;font-weight:700;cursor:pointer;transition:background-color .16s,color .16s}
+.ckbtn.yes{background:var(--gold,#E6A82A);color:var(--ink,#0B1830)}
+.ckbtn.no{background:var(--onnavy,#F4F1EA);color:var(--ink,#0B1830)}
+.ckbtn.yes:hover{background:#F2BE52}
+.ckbtn.no:hover{background:#FFFFFF}
+.cktl{background:none;border:0;padding:14px 0 0;font:inherit;font-weight:600;color:var(--onnavy,#F4F1EA);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.ckl{list-style:none;margin:0 0 18px;padding:0}
+.ckl li{display:flex;gap:16px;justify-content:space-between;align-items:flex-start;padding:14px 0;border-top:1px solid rgba(244,241,234,.16)}
+.ckl strong{display:block;color:var(--onnavy,#F4F1EA)}
+.ckl span{display:block;font-size:14px;color:var(--onnavy2,#B9C4D6)}
+.sw{flex-shrink:0;width:52px;height:30px;margin-top:2px;border-radius:999px;border:0;background:#3A4A66;position:relative;cursor:pointer;padding:0}
+.sw::after{content:"";position:absolute;top:4px;left:4px;width:22px;height:22px;border-radius:50%;background:#F4F1EA;transition:transform .15s}
+.sw[aria-checked="true"]{background:var(--gold,#E6A82A)}
+.sw[aria-checked="true"]::after{transform:translateX(22px);background:var(--ink,#0B1830)}
+.sw:disabled{opacity:.55;cursor:default}
+.cklink{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-align:left}
+.flast .cklink{color:var(--onnavy,#F4F1EA)}
+.fc .cklink{color:var(--onnavy2,#B9C4D6);text-decoration:none}
+.fc .cklink:hover{color:var(--onnavy,#F4F1EA);text-decoration:underline}
+@media (max-width:600px){.ck{left:8px;bottom:8px;width:calc(100vw - 16px);padding:22px 18px 18px;border-radius:22px 22px 0 0}.ck h2{font-size:26px}}
+.cu{position:fixed;right:16px;bottom:16px;z-index:40;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border:0;border-radius:999px 999px 0 0;background:var(--gold,#E6A82A);color:var(--ink,#0B1830);font:inherit;font-weight:700;cursor:pointer;box-shadow:0 0 0 2px var(--ground,#FAF8F3),0 8px 24px rgba(11,24,48,.25);transition:background-color .16s,color .16s}
+.cu:hover{background:var(--ink,#0B1830);color:var(--gold,#E6A82A)}
+.tk{position:fixed;right:16px;bottom:80px;z-index:45;width:min(370px,calc(100vw - 24px));height:min(520px,calc(100svh - 110px));display:flex;flex-direction:column;background:var(--ground,#FAF8F3);color:var(--ink,#0B1830);border-radius:24px 24px 0 0;box-shadow:0 18px 50px rgba(11,24,48,.3);overflow:hidden;font-size:16px;line-height:1.5;text-align:left}
+.tkh{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 14px 16px 22px;background:var(--ink,#0B1830);color:var(--onnavy,#F4F1EA)}
+.tkh strong{display:block;font-size:17px}
+.tkh span{display:block;font-size:14px;color:var(--onnavy2,#B9C4D6)}
+.tkx{width:42px;height:42px;flex-shrink:0;border:0;border-radius:50%;background:transparent;color:var(--onnavy,#F4F1EA);cursor:pointer;display:grid;place-items:center}
+.tkx:hover{background:rgba(244,241,234,.12)}
+.tkb{flex:1;overflow:auto;padding:18px;display:flex;flex-direction:column;gap:10px}
+.tkb p{margin:0;max-width:85%;padding:10px 14px;line-height:1.4}
+.tkb .them{align-self:flex-start;background:var(--tone,#EFEADF);border-radius:16px 16px 16px 4px}
+.tkb .me{align-self:flex-end;background:var(--ink,#0B1830);color:var(--onnavy,#F4F1EA);border-radius:16px 16px 4px 16px}
+.tkb .tkm,.tkb .tkm2{max-width:none;padding:0}
+.tkb .tkm2{color:var(--muted,#46526A);font-size:15px}
+.tkb .ckbtn{flex:0 0 auto}
+.tkf{display:flex;gap:8px;align-items:flex-end;padding:12px;border-top:1px solid var(--tone,#EFEADF)}
+.tkf textarea{flex:1;min-width:0;resize:none;border:1px solid #CFC8B8;border-radius:12px;padding:10px 12px;font:inherit;font-size:16px;min-height:46px;background:#fff;color:var(--ink,#0B1830)}
+.tks{min-height:46px;padding:0 18px;border:0;border-radius:999px 999px 0 0;background:var(--gold,#E6A82A);color:var(--ink,#0B1830);font:inherit;font-weight:700;cursor:pointer}
+.tks[disabled]{opacity:.5;cursor:not-allowed}
+.tkn{margin:0;padding:0 14px 12px;font-size:13px;color:var(--muted,#46526A)}
+@media (max-width:960px){.cu{min-height:46px;padding:0 16px;font-size:16px;right:12px;bottom:12px}.tk{right:12px;bottom:70px}}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.stk{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,248,243,.97);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 1px 0 rgba(11,24,48,.08),0 8px 24px rgba(11,24,48,.08);animation:stkin .22s ease-out}
+@keyframes stkin{from{transform:translateY(-100%)}to{transform:none}}
+.stk-in{max-width:1360px;margin:0 auto;padding:0 var(--m,16px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:24px;min-height:64px}
+.stk-wm{display:flex;align-items:center;gap:10px;min-height:44px;font-family:'League Spartan',Figtree,sans-serif;font-weight:700;font-size:22px;letter-spacing:-.04em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.stk-wm i{width:16px;height:21px;border-radius:8px 8px 0 0;background:var(--gold);display:block;flex-shrink:0}
+.stk-menu{display:flex;gap:0 22px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.stk-menu::-webkit-scrollbar{display:none}
+.stk-menu a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:16px;color:var(--ink);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap;transition:border-color .16s}
+.stk-menu a:hover,.stk-menu a[aria-current]{border-color:var(--gold)}
+.stk-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px 999px 0 0;background:var(--gold);color:var(--ink);font-weight:700;text-decoration:none;white-space:nowrap;transition:background-color .16s,color .16s}
+.stk-btn:hover{background:var(--ink);color:var(--ground,#FAF8F3)}
+.pg [id]{scroll-margin-top:116px}
+@media (max-width:1100px){
+.stk-in{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"wm btn" "menu menu";gap:0 16px;min-height:0;padding-top:6px}
+.stk-wm{grid-area:wm;font-size:20px}
+.stk-btn{grid-area:btn;min-height:40px;padding:0 16px;font-size:15px}
+.stk-menu{grid-area:menu;margin:0 calc(-1 * var(--m,16px));padding:0 var(--m,16px);-webkit-mask:linear-gradient(90deg,#000 88%,transparent);mask:linear-gradient(90deg,#000 88%,transparent)}
+.stk-menu a{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.stk{animation:none}}
+@media (max-width:960px){
+.flast nav a,.flast .cklink{display:inline-flex;align-items:center;min-height:44px}
+.fc a,.fc .cklink{display:inline-flex;align-items:center;min-height:36px}
+}
+.hd-r{display:flex;align-items:center;gap:20px}
+.srch{display:inline-flex;align-items:center;gap:8px;min-height:44px;min-width:44px;justify-content:center;font-weight:600;color:var(--ink);text-decoration:none}
+.srch:hover span{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:6px}
+@media (max-width:600px){.srch span{display:none}.hd-r{gap:6px}.hd .hd-top{gap:10px}.hd .wm{font-size:clamp(18px,5.4vw,24px);gap:8px;white-space:nowrap}.hd .wm i{width:16px;height:21px}.srch{min-width:40px}.hd-r .btn.sm{padding:0 14px;font-size:15px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl">
+<div class="pg">
+<a class="skip" href="#main">Skip to content</a>
+<header class="wrap hd">
+<div class="hd-top">
+<a class="wm" href="index.html"><i aria-hidden="true"></i>[church name]</a>
+<div class="hd-r"><a class="srch" href="search.html" aria-label="Search"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span>Search</span></a><a class="btn sm" href="offerings.html">Offering</a></div>
+</div>
+<nav class="menu" aria-label="Main">
+<a href="todays-message.html">Today's Message</a>
+<a href="index.html#week">Services</a>
+<a href="bible-study.html">Bible Study</a>
+<a href="sermons.html">Sermons</a>
+<a href="events.html">Events</a>
+<a href="prayer.html">Prayer</a>
+<a href="testimonies.html" aria-current="page">Testimonies</a>
+<a href="im-new.html">I'm New</a>
+</nav>
+</header>
+<sc-if value="{{stk.show}}">
+<div class="stk">
+<div class="stk-in">
+<a class="stk-wm" href="index.html"><i aria-hidden="true"></i>[church name]</a>
+<nav class="stk-menu" aria-label="Main menu, compact">
+<a href="todays-message.html">Today's Message</a>
+<a href="index.html#week">Services</a>
+<a href="bible-study.html">Bible Study</a>
+<a href="sermons.html">Sermons</a>
+<a href="events.html">Events</a>
+<a href="prayer.html">Prayer</a>
+<a href="testimonies.html" aria-current="page">Testimonies</a>
+<a href="im-new.html">I'm New</a>
+</nav>
+<a class="stk-btn" href="offerings.html">Offering</a>
+</div>
+</div>
+</sc-if>
+<main id="main">
+<section class="navy ptop" aria-labelledby="ts-h">
+<div class="wrap">
+<div class="row1"><div><p class="d kick">what God has done</p><h1 class="d h1" id="ts-h">testimonies</h1></div><a class="btn" href="testimony.html">Share your testimony</a></div>
+<p class="intro">Stories from members and visitors, in their own words. Every one is read by our ministry team before it appears here.</p>
+</div>
+</section>
+<section class="sec" aria-label="Testimonies">
+<div class="wrap">
+<p class="sample">Sample stories for the template. Real testimonies appear here once the ministry team approves them.</p>
+<div class="chips" role="group" aria-label="Show testimonies about" style="margin-bottom: 28px">
+<sc-for list="{{cats}}" as="c" hint-placeholder-count="6"><button type="button" class="chip" aria-pressed="{{c.on}}" onClick="{{c.pick}}">{{c.label}}<span>{{c.n}}</span></button></sc-for>
+</div>
+<ul class="tgrid" aria-live="polite">
+<sc-for list="{{shown}}" as="t" hint-placeholder-count="4"><li class="tc">
+<div class="ar" style="{{t.style}}" aria-hidden="true">{{t.cat}}</div>
+<div><h3>{{t.title}}</h3><p class="body">{{t.text}}</p><p class="who"><b>{{t.who}}</b> · {{t.kind}} · {{t.when}}</p><sc-if value="{{t.long}}"><button type="button" class="tl" aria-expanded="{{t.exp}}" onClick="{{t.toggle}}">{{t.more}}</button></sc-if></div>
+</li></sc-for>
+</ul>
+</div>
+</section>
+<section class="navy sec" aria-labelledby="sh-h">
+<div class="wrap share">
+<div class="tx"><h2 class="d hh" id="sh-h">has God done something in your life?</h2><p>Tell us about it. Your story could encourage someone who needs it this week. You choose how your name appears.</p></div>
+<div class="ac"><a class="btn" href="testimony.html">Share your testimony</a></div>
+</div>
+</section>
+</main>
+<footer class="navy foot">
+<div class="wrap">
+<div class="mark" aria-hidden="true"><i style="height: 62%; background: #E6A82A"></i><i style="height: 86%; background: #16294A"></i><i style="height: 100%; background: #EFEADF"></i><i style="height: 74%; background: #2B4470"></i><i style="height: 92%; background: #E6A82A"></i><i style="height: 68%; background: #EFEADF"></i><i style="height: 100%; background: #16294A"></i><i style="height: 80%; background: #E6A82A"></i><i style="height: 58%; background: #2B4470"></i></div>
+<div class="flast"><span>© 2026 [Church Name] · 6400B Frederick Road, Catonsville, MD 21228</span><nav aria-label="Footer"><a href="index.html">Home</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="offerings.html">Offering</a><a href="login.html">Log in</a><button type="button" class="cklink" onClick="{{openCookies}}">Cookie settings</button></nav></div>
+</div>
+</footer>
+<sc-if value="{{cu.open}}">
+<section class="tk" id="tawk" aria-label="Contact us chat">
+<div class="tkh"><div><strong>[Church Name]</strong><span>We usually reply within a few minutes</span></div><button type="button" class="tkx" aria-label="Minimise chat" onClick="{{cu.toggle}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+<sc-if value="{{cu.allowed}}">
+<div class="tkb" aria-live="polite">
+<sc-for list="{{cu.msgs}}" as="m" hint-placeholder-count="1"><p class="{{m.cls}}">{{m.text}}</p></sc-for>
+</div>
+<div class="tkf"><label class="sr" for="tk-in">Your message</label><textarea id="tk-in" rows="2" placeholder="Type your message" value="{{cu.draft}}" onInput="{{cu.type}}"></textarea><button type="button" class="tks" onClick="{{cu.send}}" disabled="{{cu.cantSend}}">Send</button></div>
+<p class="tkn">Preview. The live site shows the Tawk.to chat here.</p>
+</sc-if>
+<sc-if value="{{cu.blocked}}">
+<div class="tkb">
+<p class="tkm">Live chat is run by Tawk.to, which uses cookies. Allow live chat to start a conversation with the church.</p>
+<button type="button" class="ckbtn yes" onClick="{{cu.allow}}">Allow live chat</button>
+<p class="tkm2">Or email us at [Email address], or call [Phone number].</p>
+</div>
+</sc-if>
+</section>
+</sc-if>
+<sc-if value="{{cu.launcher}}">
+<button type="button" class="cu" aria-expanded="{{cu.expanded}}" aria-controls="tawk" onClick="{{cu.toggle}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span>{{cu.label}}</span></button>
+</sc-if>
+<sc-if value="{{ck.open}}">
+<section class="ck" role="dialog" aria-modal="false" aria-labelledby="ck-h" aria-describedby="ck-d">
+<h2 id="ck-h">your privacy</h2>
+<sc-if value="{{ck.simple}}">
+<p id="ck-d">We use cookies to keep this site safe and working. With your permission, we would also like to use them for live chat (Tawk.to), for videos, posts and maps from YouTube, Facebook, Instagram and Google, and to count visits with Google Analytics. We never sell your data. <a href="privacy.html">Privacy policy</a></p>
+<div class="ckb"><button type="button" class="ckbtn yes" onClick="{{ck.all}}">Accept all</button><button type="button" class="ckbtn no" onClick="{{ck.none}}">Reject all</button></div>
+<button type="button" class="cktl" onClick="{{ck.custom}}">Choose which cookies</button>
+</sc-if>
+<sc-if value="{{ck.detail}}">
+<p id="ck-d">Choose what you are happy with. You can change this at any time from Cookie settings at the bottom of the page. <a href="privacy.html">Privacy policy</a></p>
+<ul class="ckl">
+<li><div><strong>Needed for the site</strong><span>Security checks (Cloudflare Turnstile), secure giving (Stripe) and remembering this choice. Always on.</span></div><button type="button" class="sw" role="switch" aria-checked="true" aria-label="Needed for the site, always on" disabled></button></li>
+<sc-for list="{{ck.rows}}" as="r" hint-placeholder-count="3"><li><div><strong>{{r.name}}</strong><span>{{r.desc}}</span></div><button type="button" class="sw" role="switch" aria-checked="{{r.on}}" aria-label="{{r.name}}" onClick="{{r.flip}}"></button></li></sc-for>
+</ul>
+<div class="ckb"><button type="button" class="ckbtn yes" onClick="{{ck.save}}">Save my choices</button><button type="button" class="ckbtn no" onClick="{{ck.all}}">Accept all</button></div>
+</sc-if>
+</section>
+</sc-if>
+</div>
+</template>
+<noscript><p style="padding:24px;font-family:system-ui,sans-serif">Please turn on JavaScript to view this page.</p></noscript>
+<script>
+/* Tiny page runtime: fills the page template from the page's data and keeps it up to date. */
+(function () {
+  var WHOLE = /^\s*\{\{\s*([^{}]+?)\s*\}\}\s*$/;
+  var ANY = /\{\{\s*([^{}]+?)\s*\}\}/g;
+
+  function lookup(scope, path) {
+    path = path.trim();
+    if (path === 'true') return true;
+    if (path === 'false') return false;
+    if (path === 'null') return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    if (/^(['"]).*\1$/.test(path)) return path.slice(1, -1);
+    var parts = path.split('.');
+    var v = scope;
+    for (var i = 0; i < parts.length; i++) {
+      if (v == null) return undefined;
+      v = v[parts[i]];
+    }
+    return v;
+  }
+
+  function fill(str, scope) {
+    return str.replace(ANY, function (m, p) {
+      var v = lookup(scope, p);
+      return v == null ? '' : String(v);
+    });
+  }
+
+  function build(node, scope, out) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      out.push(document.createTextNode(t.indexOf('{{') > -1 ? fill(t, scope) : t));
+      return;
+    }
+    if (node.nodeType !== 1) return;
+    var tag = node.localName;
+    if (tag === 'sc-for') {
+      var m = (node.getAttribute('list') || '').match(WHOLE);
+      var list = (m && lookup(scope, m[1])) || [];
+      var as = node.getAttribute('as') || 'item';
+      list.forEach(function (item, i) {
+        var s = Object.create(scope);
+        s[as] = item;
+        s.$index = i;
+        node.childNodes.forEach(function (c) { build(c, s, out); });
+      });
+      return;
+    }
+    if (tag === 'sc-if') {
+      var mv = (node.getAttribute('value') || '').match(WHOLE);
+      if (mv && lookup(scope, mv[1])) node.childNodes.forEach(function (c) { build(c, scope, out); });
+      return;
+    }
+    var el = node.cloneNode(false);
+    el.__h = {};
+    Array.prototype.slice.call(el.attributes).forEach(function (a) {
+      var name = a.name;
+      var val = a.value;
+      if (name.indexOf('hint-') === 0) { el.removeAttribute(name); return; }
+      if (val.indexOf('{{') === -1) return;
+      var w = val.match(WHOLE);
+      if (w) {
+        var v = lookup(scope, w[1]);
+        if (name.indexOf('on') === 0) {
+          el.removeAttribute(name);
+          if (typeof v === 'function') el.__h[name.slice(2)] = v;
+          return;
+        }
+        if (v === false || v == null) el.removeAttribute(name);
+        else if (v === true) el.setAttribute(name, '');
+        else el.setAttribute(name, String(v));
+      } else {
+        el.setAttribute(name, fill(val, scope));
+      }
+    });
+    if (el.localName === 'textarea' && el.hasAttribute('value')) el.value = el.getAttribute('value');
+    var kids = [];
+    node.childNodes.forEach(function (c) { build(c, scope, kids); });
+    kids.forEach(function (k) { el.appendChild(k); });
+    if (el.localName === 'select' && el.hasAttribute('value')) el.value = el.getAttribute('value');
+    out.push(el);
+  }
+
+  function firstClass(el) {
+    return ((el.getAttribute && el.getAttribute('class')) || '').split(' ')[0];
+  }
+
+  function same(a, b) {
+    if (a.nodeType !== b.nodeType) return false;
+    if (a.nodeType !== 1) return true;
+    return a.localName === b.localName && a.namespaceURI === b.namespaceURI && firstClass(a) === firstClass(b) && (a.id || '') === (b.id || '');
+  }
+
+  // Matches old and new children so that a block appearing or disappearing
+  // does not rebuild everything after it (which would lose focus and typing).
+  function morphChildren(oldP, list) {
+    for (var i = 0; i < list.length; i++) {
+      var n = list[i];
+      var o = oldP.childNodes[i];
+      if (!o) { oldP.appendChild(n); continue; }
+      if (!same(o, n)) {
+        var j, ahead = -1, behind = -1;
+        for (j = i + 1; j < Math.min(list.length, i + 10); j++) { if (same(o, list[j])) { ahead = j; break; } }
+        if (ahead > -1 && o.nodeType === 1) { oldP.insertBefore(n, o); continue; }
+        for (j = i + 1; j < Math.min(oldP.childNodes.length, i + 10); j++) { if (same(oldP.childNodes[j], n)) { behind = j; break; } }
+        if (behind > -1 && n.nodeType === 1) {
+          for (var k = i; k < behind; k++) oldP.removeChild(oldP.childNodes[i]);
+          o = oldP.childNodes[i];
+        } else if (ahead > -1) {
+          oldP.insertBefore(n, o);
+          continue;
+        } else {
+          oldP.replaceChild(n, o);
+          continue;
+        }
+      }
+      if (o.nodeType === 3) { if (o.nodeValue !== n.nodeValue) o.nodeValue = n.nodeValue; continue; }
+      morphEl(o, n);
+    }
+    while (oldP.childNodes.length > list.length) oldP.removeChild(oldP.lastChild);
+  }
+
+  function morphEl(o, n) {
+    Array.prototype.slice.call(o.attributes).forEach(function (a) {
+      if (!n.hasAttribute(a.name)) o.removeAttribute(a.name);
+    });
+    Array.prototype.slice.call(n.attributes).forEach(function (a) {
+      if (o.getAttribute(a.name) !== a.value) o.setAttribute(a.name, a.value);
+    });
+    o.__h = n.__h;
+    if ((o.localName === 'input' || o.localName === 'textarea' || o.localName === 'select') && n.hasAttribute('value') && o !== document.activeElement && o.value !== n.getAttribute('value')) {
+      o.value = n.getAttribute('value');
+    }
+    if (o.localName === 'textarea' || o.localName === 'input' || o.localName === 'select') return;
+    morphChildren(o, Array.prototype.slice.call(n.childNodes));
+  }
+
+  var app, tpl, comp, queued = false;
+
+  function render() {
+    queued = false;
+    var vals = comp.renderVals();
+    var out = [];
+    tpl.content.childNodes.forEach(function (c) { build(c, vals, out); });
+    morphChildren(app, out);
+  }
+
+  function schedule() {
+    if (queued) return;
+    queued = true;
+    Promise.resolve().then(render);
+  }
+
+  window.PageLogic = function PageLogic(props) {
+    this.props = props || {};
+    this.state = {};
+  };
+  window.PageLogic.prototype.setState = function (p) {
+    var u = typeof p === 'function' ? p(this.state, this.props) : p;
+    this.state = Object.assign({}, this.state, u);
+    schedule();
+  };
+  window.PageLogic.prototype.forceUpdate = function () { schedule(); };
+
+  window.__boot = function (Component, props) {
+    app = document.getElementById('app');
+    tpl = document.getElementById('tpl');
+    comp = new Component(props || {});
+    ['click', 'input', 'change'].forEach(function (type) {
+      app.addEventListener(type, function (e) {
+        var t = e.target;
+        while (t && t !== app) {
+          if (t.__h && t.__h[type]) { t.__h[type](e); break; }
+          t = t.parentNode;
+        }
+      });
+    });
+    render();
+    if (typeof comp.componentDidMount === 'function') comp.componentDidMount();
+  };
+})();
+</script>
+<script>
+class Component extends PageLogic {
+  constructor(props) {
+    super(props);
+    this.state = {"cat": "all", "open": ""};
+  }
+  pageVals(consent) {
+    const s = this.state;
+    const data = [
+      { id: 'a', cat: 'Healing', title: 'Healed after surgery', who: '[First name L.]', kind: 'Member', when: 'October 2026', short: '[The first two or three sentences of the testimony, as the member wrote them.]', full: '[The first two or three sentences of the testimony, as the member wrote them.] [The rest of the story continues here, as long as the member wrote it, after the ministry team has approved it.]' },
+      { id: 'b', cat: 'Provision', title: 'A new job just in time', who: '[First name L.]', kind: 'Visitor', when: 'October 2026', short: '[The first two or three sentences of the testimony, as they wrote them.]', full: '' },
+      { id: 'c', cat: 'Answered prayer', title: 'My mother came home', who: '[First name L.]', kind: 'Member', when: 'September 2026', short: '[The first two or three sentences of the testimony, as they wrote them.]', full: '[The first two or three sentences of the testimony, as they wrote them.] [The full story continues here.]' },
+      { id: 'd', cat: 'Salvation', title: 'I found my way back', who: '[First name L.]', kind: 'Member', when: 'September 2026', short: '[The first two or three sentences of the testimony, as they wrote them.]', full: '' },
+      { id: 'e', cat: 'Deliverance', title: 'Free after ten years', who: 'Anonymous', kind: 'Visitor', when: 'August 2026', short: '[The first two or three sentences of the testimony, as they wrote them.]', full: '[The first two or three sentences of the testimony, as they wrote them.] [The full story continues here.]' },
+      { id: 'f', cat: 'Healing', title: 'Peace through the night', who: '[First name L.]', kind: 'Member', when: 'August 2026', short: '[The first two or three sentences of the testimony, as they wrote them.]', full: '' },
+      { id: 'g', cat: 'Provision', title: 'Rent paid, with some to spare', who: '[First name L.]', kind: 'Member', when: 'July 2026', short: '[The first two or three sentences of the testimony, as they wrote them.]', full: '' },
+      { id: 'h', cat: 'Answered prayer', title: 'The visa came through', who: '[First name L.]', kind: 'Visitor', when: 'July 2026', short: '[The first two or three sentences of the testimony, as they wrote them.]', full: '' }
+    ];
+    const order = ['all', 'Healing', 'Salvation', 'Provision', 'Deliverance', 'Answered prayer'];
+    const cats = order.map((k) => ({ label: k === 'all' ? 'All' : k, n: k === 'all' ? data.length : data.filter((t) => t.cat === k).length, on: s.cat === k ? 'true' : 'false', pick: () => this.setState({ cat: k, open: '' }) }));
+    const colors = { Healing: ['#E6A82A', '#0B1830'], Salvation: ['#0B1830', '#E6A82A'], Provision: ['#2B4470', '#F4F1EA'], Deliverance: ['#EFEADF', '#0B1830'], 'Answered prayer': ['#16294A', '#F4F1EA'] };
+    const shown = data.filter((t) => s.cat === 'all' || t.cat === s.cat).map((t) => {
+      const isOpen = s.open === t.id;
+      return {
+        title: t.title, who: t.who, kind: t.kind, when: t.when, cat: t.cat,
+        text: isOpen && t.full ? t.full : t.short,
+        long: !!t.full, exp: isOpen ? 'true' : 'false', more: isOpen ? 'Show less' : 'Read the full story',
+        toggle: () => this.setState({ open: isOpen ? '' : t.id }),
+        style: 'background: ' + colors[t.cat][0] + '; color: ' + colors[t.cat][1]
+      };
+    });
+    return { cats, shown };
+  }
+
+  tsVals(key) {
+    const ok = !!this.state[key];
+    return {
+      ok,
+      cls: ok ? 'ok' : '',
+      pressed: ok ? 'true' : 'false',
+      label: ok ? 'Verified' : 'Verify you are human',
+      verify: () => this.setState({ [key]: true })
+    };
+  }
+
+  chkVals(key) {
+    const val = !!this.state[key];
+    return { val, on: val ? 'true' : 'false', flip: () => this.setState({ [key]: !this.state[key] }) };
+  }
+  ckRead() {
+    try {
+      const v = JSON.parse(window.localStorage.getItem('church-consent-v1') || 'null');
+      if (v && typeof v === 'object') return v;
+    } catch (e) {}
+    return null;
+  }
+  ckSet(v) {
+    const rec = { chat: !!v.chat, media: !!v.media, analytics: !!v.analytics, at: new Date().toISOString() };
+    try { window.localStorage.setItem('church-consent-v1', JSON.stringify(rec)); } catch (e) {}
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { analytics_storage: rec.analytics ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      }
+    } catch (e) {}
+    this._ckSaved = rec;
+    this.setState({ ckOpen: false, ckView: 'simple', ckDraft: null });
+  }
+  consentVals() {
+    if (!this._ckLoaded) { this._ckLoaded = true; this._ckSaved = this.ckRead(); }
+    const saved = this._ckSaved;
+    const open = !saved || !!this.state.ckOpen;
+    const view = this.state.ckView || 'simple';
+    const draft = this.state.ckDraft || saved || { chat: false, media: false, analytics: false };
+    const defs = [
+      ['chat', 'Live chat', 'Tawk.to, for the Contact us chat.'],
+      ['media', 'Videos, posts and maps', 'The YouTube live stream and sermons, Facebook and Instagram posts, and Google Maps.'],
+      ['analytics', 'Visit counts', 'Google Analytics, so we can see which pages help people. No advertising.']
+    ];
+    const rows = defs.map(([k, name, desc]) => ({
+      name, desc,
+      on: draft[k] ? 'true' : 'false',
+      flip: () => this.setState({ ckDraft: Object.assign({}, draft, { [k]: !draft[k] }) })
+    }));
+    return {
+      ck: {
+        open, rows,
+        simple: view === 'simple',
+        detail: view === 'detail',
+        all: () => this.ckSet({ chat: true, media: true, analytics: true }),
+        none: () => this.ckSet({ chat: false, media: false, analytics: false }),
+        custom: () => this.setState({ ckView: 'detail', ckDraft: draft }),
+        save: () => this.ckSet(draft)
+      },
+      chatAllowed: !!(saved && saved.chat),
+      openCookies: () => this.setState({ ckOpen: true, ckView: 'detail', ckDraft: null })
+    };
+  }
+  contactVals(consent) {
+    const msgs = this.state.cuMsgs || [{ cls: 'them', text: 'Hello, and welcome. How can we help today? Ask about a visit, prayer, giving or anything else.' }];
+    const draft = this.state.cuDraft || '';
+    const isOpen = !!this.state.cuOpen && !consent.ck.open;
+    return {
+      cu: {
+        launcher: !consent.ck.open,
+        open: isOpen,
+        expanded: isOpen ? 'true' : 'false',
+        label: isOpen ? 'Close' : 'Contact us',
+        toggle: () => this.setState({ cuOpen: !this.state.cuOpen }),
+        allowed: consent.chatAllowed,
+        blocked: !consent.chatAllowed,
+        msgs, draft,
+        cantSend: !draft.trim(),
+        type: (e) => this.setState({ cuDraft: e.target.value }),
+        send: () => {
+          const t = draft.trim();
+          if (!t) return;
+          const next = msgs.concat([{ cls: 'me', text: t }]);
+          if (!msgs.some((m) => m.cls === 'me')) next.push({ cls: 'them', text: 'Thank you. Someone from the church will answer here shortly. If we are away, leave your email and we will write back.' });
+          this.setState({ cuDraft: '', cuMsgs: next });
+        },
+        allow: () => this.ckSet(Object.assign({}, this._ckSaved || {}, { chat: true }))
+      },
+      openContact: () => this.setState({ cuOpen: true })
+    };
+  }
+  stickyVals() {
+    if (!this._stkInit && typeof window !== 'undefined') {
+      this._stkInit = true;
+      const check = () => {
+        const hd = document.querySelector('header.hd');
+        if (!hd) return;
+        const s = hd.getBoundingClientRect().bottom < 0;
+        if (s !== !!this._stk) { this._stk = s; this.setState({ stkTick: Date.now() }); }
+      };
+      window.addEventListener('scroll', check, { passive: true });
+      window.addEventListener('resize', check);
+      setTimeout(check, 0);
+    }
+    return { stk: { show: !!this._stk } };
+  }
+  renderVals() {
+    const c = this.consentVals();
+    return Object.assign({}, this.pageVals(c), c, this.contactVals(c), this.stickyVals());
+  }
+}
+window.__boot(Component, {});
+</script>
+</body>
+</html>

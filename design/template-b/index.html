@@ -1,0 +1,999 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<title>Home · a church on Frederick Road</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF8F3}
+a{color:#0B1830}a:hover{color:#0B1830}
+.pg{color-scheme:only light;--ground:#FAF8F3;--tone:#EFEADF;--ink:#0B1830;--muted:#46526A;--gold:#E6A82A;--navy2:#16294A;--onnavy:#F4F1EA;--onnavy2:#B9C4D6;--focus:#0B1830;--fs-s:14px;--fs-b:clamp(17px,1rem + .25vw,19px);--fs-l:clamp(20px,1.1rem + .7vw,26px);--fs-h:clamp(34px,1.2rem + 3vw,60px);--m:clamp(16px,4vw,56px);font-family:Figtree,system-ui,sans-serif;font-size:var(--fs-b);line-height:1.5;color:var(--ink);background:var(--ground);overflow-x:clip}
+.pg *{box-sizing:border-box}
+.d{font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.04em;line-height:.92}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--m)}
+.sec{padding:clamp(48px,6vw,96px) 0}
+.navy{background:var(--ink);color:var(--onnavy);--focus:#E6A82A}
+.toneb{background:var(--tone)}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.pg a:focus-visible,.pg button:focus-visible,.pg input:focus-visible,.pg textarea:focus-visible,.pg select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:var(--ground);padding:12px 18px;z-index:50}
+.skip:focus{left:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px 999px 0 0;background:var(--gold);color:var(--ink);font:inherit;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:background-color .16s ease,color .16s ease,transform .12s ease}
+.btn:hover{background:var(--ink);color:var(--ground)}
+.navy .btn:hover{background:var(--ground);color:var(--ink)}
+.btn:active{transform:translateY(1px)}
+.btn.sm{min-height:46px;padding:0 22px;font-size:16px}
+.tl{color:inherit;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--gold);transition:text-decoration-thickness .16s}
+.tl:hover{text-decoration-thickness:4px;color:inherit}
+.icb{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;color:inherit;cursor:pointer;flex-shrink:0}
+.ann{background:var(--ink);color:var(--onnavy);font-size:16px}
+.ann .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px}
+.ann p{margin:0}
+.ann a{color:var(--onnavy)}
+.hd{padding-top:14px;padding-bottom:6px}
+.hd-top{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.wm{display:flex;align-items:center;gap:12px;font-family:'League Spartan',Figtree,sans-serif;font-weight:700;font-size:28px;letter-spacing:-.04em;color:var(--ink);text-decoration:none}
+.wm i{width:22px;height:28px;border-radius:11px 11px 0 0;background:var(--gold);display:block;flex-shrink:0}
+.menu{display:flex;flex-wrap:wrap;gap:0 26px;margin-top:6px}
+.menu a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:3px solid transparent;transition:border-color .16s}
+.menu a:hover,.menu a[aria-current]{border-color:var(--gold)}
+.live{padding:48px 0}
+.live .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:center}
+.player{aspect-ratio:16/9;background:#13243F;color:var(--onnavy2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:16px}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:#F26D5B;margin-right:10px;animation:pulse 1.6s ease-in-out infinite}
+.msg{padding:clamp(40px,5vw,72px) 0}
+.msg-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
+.msg-tx{grid-column:1/8;animation:rise .8s .05s cubic-bezier(.2,.7,.1,1) both}
+.mh{font-size:clamp(26px,2.4vw,36px);margin:0 0 18px;color:var(--gold)}
+.mt{font-size:clamp(44px,5vw,84px);margin:0}
+.mmeta{margin:14px 0 0;color:var(--onnavy2);font-size:16px}
+.msyn{margin:20px 0 28px;font-size:var(--fs-l);line-height:1.38;max-width:38ch;color:var(--onnavy)}
+.ma{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.ma .tl{color:var(--onnavy)}
+.verse{grid-column:9/13;margin:0;background:var(--gold);color:var(--ink);border-radius:999px 999px 0 0;padding:clamp(96px,9vw,140px) 32px 36px;text-align:center;animation:archin 1s cubic-bezier(.2,.7,.1,1) both}
+.verse blockquote{margin:0;font-size:clamp(20px,1.5vw,24px);line-height:1.35;font-weight:600}
+.verse figcaption{margin-top:14px;font-size:15px;font-weight:700}
+.cat{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 16px;margin-bottom:36px}
+.hh{font-size:var(--fs-h);margin:0}
+.cnt{color:var(--muted);font-weight:600}
+.wk{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"sun bib" "pra bib" "liv bib";column-gap:56px;row-gap:36px;align-items:start}
+.a-sun{grid-area:sun}.a-bib{grid-area:bib}.a-pra{grid-area:pra}.a-liv{grid-area:liv}
+.it{display:grid;grid-template-columns:64px minmax(0,1fr);gap:20px;align-items:start}
+.bul{width:64px;height:78px;border-radius:32px 32px 0 0;overflow:hidden;display:block}
+.bul svg{display:block;width:100%;height:100%}
+.itl{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:2px 12px;font-size:var(--fs-l);line-height:1.2}
+.itl strong{font-weight:700}
+.tm{font-size:var(--fs-b);font-weight:700;font-variant-numeric:tabular-nums}
+.tz{margin:2px 0 0;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ds{margin:8px 0 12px;color:var(--muted);max-width:46ch}
+.lk{margin:0;display:flex;flex-wrap:wrap;gap:8px 22px}
+.study{background:var(--tone);padding:24px 24px 26px;margin:6px 0 14px;border-radius:0}
+.study h4{margin:0;font-size:15px;font-weight:700;color:var(--muted)}
+.study .st{font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.03em;font-size:clamp(26px,2vw,32px);line-height:1;margin:6px 0 4px}
+.study .sp{margin:0 0 10px;font-weight:600}
+.study p.sum{margin:0 0 18px;color:var(--ink)}
+.recent{list-style:none;margin:0 0 4px;padding:0;display:flex;flex-direction:column;gap:8px}
+.recent a{display:flex;justify-content:space-between;gap:12px;min-height:44px;align-items:center;padding:0 14px;background:var(--ground);color:var(--ink);text-decoration:none;font-weight:600}
+.recent a:hover{background:#FFFFFF}
+.recent span{color:var(--muted);font-weight:500;font-size:15px;white-space:nowrap}
+.show{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
+.evl{grid-column:1/6;list-style:none;margin:0;padding:0}
+.evh{font-size:clamp(30px,2.9vw,44px);margin:0 0 6px;line-height:1.15}
+.evn{display:flex;align-items:center;gap:14px;width:100%;text-align:left;border:0;background:transparent;padding:4px 0;cursor:pointer;font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.04em;font-size:clamp(28px,2.6vw,40px);line-height:1.15;color:var(--muted);transition:color .16s}
+.evn:hover{color:var(--ink)}
+.evn i{width:.42em;height:.52em;border-radius:.21em .21em 0 0;background:transparent;flex-shrink:0;transition:background-color .16s}
+.evn.on{color:var(--ink)}
+.evn.on i{background:var(--gold)}
+.evc{margin:20px 0 0}
+.stage{grid-column:6/10;display:flex;justify-content:center}
+.poster{width:min(100%,380px);height:clamp(300px,32vw,420px);border-radius:190px 190px 0 0;overflow:hidden;animation:shut .9s cubic-bezier(.2,.7,.1,1) both}
+.pin{width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 30px}
+.pdate{font-size:clamp(64px,6.4vw,110px);line-height:.82;margin:0}
+.ptitle{font-size:clamp(24px,2vw,32px);line-height:1;margin:14px 0 0}
+.fact{grid-column:10/13}
+.fact p{margin:0 0 6px}
+.fact .btn{margin-top:14px}
+.tst{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
+.portrait{grid-column:2/6;aspect-ratio:4/5;border-radius:999px 999px 0 0;background:var(--ink);color:var(--gold);display:flex;align-items:flex-end;padding:36px 30px;overflow:hidden}
+.portrait span{font-size:clamp(56px,6vw,104px);line-height:.85}
+.quote{grid-column:7/13}
+.quote blockquote{margin:24px 0 0;font-size:clamp(22px,1rem + 1.2vw,34px);line-height:1.25;max-width:28ch}
+.attr{margin:24px 0 0;font-weight:600}
+.attr span{color:var(--muted);font-weight:400}
+.tsa{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:32px}
+.note{margin:18px 0 0;color:var(--muted);max-width:46ch}
+.watch{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
+.wtx{grid-column:1/7}
+.wtx p{color:var(--onnavy2);max-width:40ch}
+.wtx .first{color:var(--onnavy);font-size:var(--fs-l);line-height:1.35;margin:24px 0 30px}
+.wa{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.wa .tl{color:var(--onnavy)}
+.fol{margin:32px 0 0;display:flex;flex-wrap:wrap;gap:8px 24px}
+.fol a{color:var(--onnavy)}
+.frame-col{grid-column:8/13}
+.frame{position:relative;width:100%;aspect-ratio:16/10;border-radius:50% 50% 0 0/38% 38% 0 0;overflow:hidden}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 30px}
+.slide .d{font-size:clamp(34px,3vw,52px);margin:0}
+.slide p{margin:10px 0 0;font-weight:600}
+.coupon{max-width:1120px;margin:0 auto;background:var(--ink);color:var(--onnavy);display:grid;grid-template-columns:46fr 54fr;--focus:#E6A82A;-webkit-mask:radial-gradient(circle 16px at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 16px at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat;mask:radial-gradient(circle 16px at 46% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 16px at 46% 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+.cl{padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.cl h2{font-size:clamp(34px,1rem + 2.4vw,50px);margin:0;color:var(--onnavy)}
+.cl p{margin:0;color:var(--onnavy2)}
+.cl a{color:var(--onnavy)}
+.cr{padding:44px;border-left:5px dotted var(--ground)}
+.cr form{display:flex;flex-direction:column;gap:14px}
+.fl{display:flex;flex-direction:column;gap:6px}
+.fl label{font-size:15px;font-weight:600;color:var(--onnavy)}
+.in{height:52px;border:0;background:#1F3458;color:var(--onnavy);font:inherit;font-size:17px;padding:0 16px}
+textarea.in{height:auto;min-height:120px;padding:14px 16px;resize:vertical}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--onnavy);cursor:pointer}
+.chk input{width:22px;height:22px;margin:2px 0 0;accent-color:#E6A82A}
+.ts{display:flex;align-items:center;gap:12px;height:60px;padding:0 16px;background:#1F3458;color:var(--onnavy);font-size:15px;font-weight:600}
+.ts b{width:24px;height:24px;border:2px solid var(--onnavy2);display:block;flex-shrink:0}
+.sub{height:58px;border:0;background:var(--gold);color:var(--ink);font:inherit;font-weight:700;cursor:pointer;transition:background-color .16s,color .16s}
+.sub:hover{background:var(--ground)}
+.sent{display:flex;flex-direction:column;justify-content:center;gap:12px;height:100%}
+.sent h3{font-size:var(--fs-h);margin:0;color:var(--onnavy)}
+.give{position:relative;display:block;min-height:50svh;background:var(--gold);color:var(--ink);text-decoration:none;border-radius:50vw 50vw 0 0/9vw 9vw 0 0;overflow:hidden;transition:background-color .2s,color .2s}
+.give:hover,.give:focus-visible{background:var(--ink);color:var(--gold)}
+.give:hover .gs,.give:focus-visible .gs{color:var(--onnavy)}
+.gs{position:absolute;left:var(--m);top:clamp(48px,6vw,96px);max-width:34ch;font-size:20px;font-weight:600;transition:color .2s}
+.ga{position:absolute;right:var(--m);top:clamp(44px,6vw,92px)}
+.gw{position:absolute;left:var(--m);bottom:24px;font-size:clamp(150px,30vw,540px);line-height:.74;margin:0;transition:transform .5s cubic-bezier(.2,.7,.1,1)}
+.give:hover .gw{transform:translateX(1.2vw)}
+.find{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
+.ftx{grid-column:1/6}
+.ftx address{font-style:normal;font-size:var(--fs-l);line-height:1.35;margin:24px 0}
+.tim{display:grid;grid-template-columns:auto 1fr;gap:6px 24px;margin:0 0 24px}
+.tim dt{font-weight:700}
+.tim dd{margin:0;color:var(--muted);font-variant-numeric:tabular-nums}
+.fa{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.mapc{grid-column:7/13}
+.map{width:100%;aspect-ratio:5/4;border-radius:50% 50% 0 0/30% 30% 0 0;overflow:hidden;background:var(--tone)}
+.map svg{display:block;width:100%;height:100%}
+.mapnote{margin:12px 0 0;font-size:var(--fs-s);color:var(--muted);text-align:center}
+.foot{padding:56px 0 28px}
+.mark{display:flex;align-items:flex-end;gap:4px;height:22svh;min-height:140px}
+.mark i{flex:1;border-radius:999px 999px 0 0;display:block}
+.fcols{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:32px;margin-top:48px}
+.fc{grid-column:span 2;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.fc strong{color:var(--onnavy);font-size:16px}
+.fc a{color:var(--onnavy2);text-decoration:none}
+.fc a:hover{color:var(--onnavy);text-decoration:underline}
+.fad{grid-column:span 4;font-size:15px;color:var(--onnavy2)}
+.fad p{margin:0 0 12px}
+.fad strong{color:var(--onnavy)}
+.flast{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;font-size:14px;color:var(--onnavy2)}
+.chat{position:fixed;right:16px;bottom:16px;z-index:40;border:0;font:inherit;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px 999px 0 0;background:var(--gold);color:var(--ink);font-weight:700;text-decoration:none;box-shadow:0 0 0 2px var(--ground),0 8px 24px rgba(11,24,48,.25);transition:background-color .16s,color .16s}
+.chat:hover{background:var(--ink);color:var(--gold)}
+.tk{position:fixed;right:16px;bottom:80px;z-index:45;width:min(370px,calc(100vw - 24px));height:min(520px,calc(100svh - 110px));display:flex;flex-direction:column;background:var(--ground);border-radius:24px 24px 0 0;box-shadow:0 18px 50px rgba(11,24,48,.3);overflow:hidden;font-size:16px}
+.tkh{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 14px 16px 22px;background:var(--ink);color:var(--onnavy)}
+.tkh strong{display:block;font-size:17px}
+.tkh span{display:block;font-size:14px;color:var(--onnavy2)}
+.tkx{width:42px;height:42px;flex-shrink:0;border:0;border-radius:50%;background:transparent;color:var(--onnavy);cursor:pointer;display:grid;place-items:center}
+.tkx:hover{background:rgba(244,241,234,.12)}
+.tkb{flex:1;overflow:auto;padding:18px;display:flex;flex-direction:column;gap:10px}
+.tkb p{margin:0;max-width:85%;padding:10px 14px;line-height:1.4}
+.tkb .them{align-self:flex-start;background:var(--tone);border-radius:16px 16px 16px 4px}
+.tkb .me{align-self:flex-end;background:var(--ink);color:var(--onnavy);border-radius:16px 16px 4px 16px}
+.tkb .tkm,.tkb .tkm2{max-width:none;padding:0}
+.tkb .tkm2{color:var(--muted);font-size:15px}
+.tkb .ckbtn{flex:0 0 auto}
+.tkf{display:flex;gap:8px;align-items:flex-end;padding:12px;border-top:1px solid var(--tone)}
+.tkf textarea{flex:1;min-width:0;resize:none;border:1px solid #CFC8B8;border-radius:12px;padding:10px 12px;font:inherit;font-size:16px;min-height:46px;background:#fff;color:var(--ink)}
+.tks{min-height:46px;padding:0 18px;border:0;border-radius:999px 999px 0 0;background:var(--gold);color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+.tks[disabled]{opacity:.5;cursor:not-allowed}
+.tkn{margin:0;padding:0 14px 12px;font-size:13px;color:var(--muted)}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes archin{from{transform:translateY(12%)}to{transform:none}}
+@keyframes shut{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes xfade{0%{opacity:0}4%{opacity:1}20%{opacity:1}24%{opacity:0}100%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@supports (animation-timeline: view()){
+.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 20%}
+.rv2{animation:rise linear both;animation-timeline:view();animation-range:entry 6% cover 26%}
+}
+@media (prefers-reduced-motion: reduce){
+.pg *,.pg *::before{animation:none!important;transition:none!important}
+}
+@media (max-width: 960px){
+.sec{padding:44px 0}
+.hd{padding-top:10px}
+.hd-top{min-height:52px}
+.wm{font-size:24px}
+.menu{gap:0 18px;margin-top:4px}
+.menu a{font-size:16px;min-height:42px}
+.live .wrap{grid-template-columns:1fr;gap:24px}
+.msg{padding:36px 0 40px}
+.msg-in{display:block}
+.verse{display:none}
+.mt{font-size:13vw}
+.wk{display:flex;flex-direction:column;gap:32px}
+.it{grid-template-columns:52px minmax(0,1fr);gap:14px}
+.bul{width:52px;height:64px;border-radius:26px 26px 0 0}
+.itl{flex-direction:column;align-items:flex-start;gap:2px}
+.study{padding:18px 16px 20px}
+.recent a{padding:0 12px}
+.show{display:flex;flex-direction:column;align-items:stretch;gap:24px}
+.stage{justify-content:flex-start}
+.poster{width:100%;height:60vw;max-height:300px;border-radius:50% 50% 0 0/28% 28% 0 0}
+.pdate{font-size:15vw}
+.tst,.watch,.find{display:block}
+.portrait{width:62%;aspect-ratio:1/1}
+.quote{margin-top:28px}
+.frame-col{margin-top:32px}
+.frame{aspect-ratio:16/11}
+.coupon{grid-template-columns:minmax(0,1fr);-webkit-mask:none;mask:none}
+.cl,.cr{min-width:0}
+.cl{padding:36px 22px 4px}
+.cr{border-left:0;border-top:5px dotted var(--ground);padding:28px 22px 34px;margin-top:20px}
+.give{min-height:38svh}
+.gs{max-width:24ch;font-size:17px}
+.ga svg{width:32px;height:32px}
+.gw{font-size:38vw}
+.mapc{margin-top:36px}
+.mark{height:16svh;min-height:100px}
+.fc{grid-column:span 6}
+.fad{grid-column:span 12}
+.chat{min-height:46px;padding:0 16px;font-size:16px;right:12px;bottom:12px}
+.tk{right:12px;bottom:70px}
+}
+.ck{position:fixed;left:16px;bottom:16px;z-index:60;width:min(560px,calc(100vw - 32px));max-height:calc(100svh - 32px);overflow:auto;background:var(--ink,#0B1830);color:var(--onnavy,#F4F1EA);border-radius:28px 28px 0 0;box-shadow:0 0 0 1px rgba(244,241,234,.22),0 22px 60px rgba(0,0,0,.45);padding:28px 28px 24px;font-size:16px;line-height:1.5;text-align:left;--focus:#E6A82A}
+.ck h2{font-family:'League Spartan',Figtree,sans-serif;font-weight:700;letter-spacing:-.03em;line-height:1;font-size:30px;margin:0 0 10px;color:var(--gold,#E6A82A)}
+.ck p{margin:0 0 18px;color:var(--onnavy2,#B9C4D6)}
+.ck a{color:var(--onnavy,#F4F1EA);text-decoration:underline;text-underline-offset:3px}
+.ckb{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ckbtn{flex:1 1 130px;min-height:50px;padding:0 14px;white-space:nowrap;border:0;border-radius:999px 999px 0 0;font:inherit;font-weight:700;cursor:pointer;transition:background-color .16s,color .16s}
+.ckbtn.yes{background:var(--gold,#E6A82A);color:var(--ink,#0B1830)}
+.ckbtn.no{background:var(--onnavy,#F4F1EA);color:var(--ink,#0B1830)}
+.ckbtn.yes:hover{background:#F2BE52}
+.ckbtn.no:hover{background:#FFFFFF}
+.cktl{background:none;border:0;padding:14px 0 0;font:inherit;font-weight:600;color:var(--onnavy,#F4F1EA);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.ckl{list-style:none;margin:0 0 18px;padding:0}
+.ckl li{display:flex;gap:16px;justify-content:space-between;align-items:flex-start;padding:14px 0;border-top:1px solid rgba(244,241,234,.16)}
+.ckl strong{display:block;color:var(--onnavy,#F4F1EA)}
+.ckl span{display:block;font-size:14px;color:var(--onnavy2,#B9C4D6)}
+.sw{flex-shrink:0;width:52px;height:30px;margin-top:2px;border-radius:999px;border:0;background:#3A4A66;position:relative;cursor:pointer;padding:0}
+.sw::after{content:"";position:absolute;top:4px;left:4px;width:22px;height:22px;border-radius:50%;background:#F4F1EA;transition:transform .15s}
+.sw[aria-checked="true"]{background:var(--gold,#E6A82A)}
+.sw[aria-checked="true"]::after{transform:translateX(22px);background:var(--ink,#0B1830)}
+.sw:disabled{opacity:.55;cursor:default}
+.cklink{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-align:left}
+.flast .cklink{color:var(--onnavy,#F4F1EA)}
+.fc .cklink{color:var(--onnavy2,#B9C4D6);text-decoration:none}
+.fc .cklink:hover{color:var(--onnavy,#F4F1EA);text-decoration:underline}
+@media (max-width:600px){.ck{left:8px;bottom:8px;width:calc(100vw - 16px);padding:22px 18px 18px;border-radius:22px 22px 0 0}.ck h2{font-size:26px}}
+.stk{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,248,243,.97);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 1px 0 rgba(11,24,48,.08),0 8px 24px rgba(11,24,48,.08);animation:stkin .22s ease-out}
+@keyframes stkin{from{transform:translateY(-100%)}to{transform:none}}
+.stk-in{max-width:1360px;margin:0 auto;padding:0 var(--m,16px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:24px;min-height:64px}
+.stk-wm{display:flex;align-items:center;gap:10px;min-height:44px;font-family:'League Spartan',Figtree,sans-serif;font-weight:700;font-size:22px;letter-spacing:-.04em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.stk-wm i{width:16px;height:21px;border-radius:8px 8px 0 0;background:var(--gold);display:block;flex-shrink:0}
+.stk-menu{display:flex;gap:0 22px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.stk-menu::-webkit-scrollbar{display:none}
+.stk-menu a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:16px;color:var(--ink);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap;transition:border-color .16s}
+.stk-menu a:hover,.stk-menu a[aria-current]{border-color:var(--gold)}
+.stk-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px 999px 0 0;background:var(--gold);color:var(--ink);font-weight:700;text-decoration:none;white-space:nowrap;transition:background-color .16s,color .16s}
+.stk-btn:hover{background:var(--ink);color:var(--ground,#FAF8F3)}
+.pg [id]{scroll-margin-top:116px}
+@media (max-width:1100px){
+.stk-in{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"wm btn" "menu menu";gap:0 16px;min-height:0;padding-top:6px}
+.stk-wm{grid-area:wm;font-size:20px}
+.stk-btn{grid-area:btn;min-height:40px;padding:0 16px;font-size:15px}
+.stk-menu{grid-area:menu;margin:0 calc(-1 * var(--m,16px));padding:0 var(--m,16px);-webkit-mask:linear-gradient(90deg,#000 88%,transparent);mask:linear-gradient(90deg,#000 88%,transparent)}
+.stk-menu a{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.stk{animation:none}}
+@media (max-width:960px){
+.flast nav a,.flast .cklink{display:inline-flex;align-items:center;min-height:44px}
+.fc a,.fc .cklink{display:inline-flex;align-items:center;min-height:36px}
+}
+.hd-r{display:flex;align-items:center;gap:20px}
+.srch{display:inline-flex;align-items:center;gap:8px;min-height:44px;min-width:44px;justify-content:center;font-weight:600;color:var(--ink);text-decoration:none}
+.srch:hover span{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:6px}
+@media (max-width:600px){.srch span{display:none}.hd-r{gap:6px}.hd .hd-top{gap:10px}.hd .wm{font-size:clamp(18px,5.4vw,24px);gap:8px;white-space:nowrap}.hd .wm i{width:16px;height:21px}.srch{min-width:40px}.hd-r .btn.sm{padding:0 14px;font-size:15px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl">
+<div class="pg">
+<a class="skip" href="#main">Skip to content</a>
+
+<sc-if value="{{showNotice}}" hint-placeholder-val="{{ true }}">
+<div class="ann" role="region" aria-label="Announcement">
+<div class="wrap">
+<p>[Urgent news, e.g. this Sunday's service will be online only because of snow.] <a href="#announcement">Details</a></p>
+<button type="button" class="icb" aria-label="Dismiss announcement" onClick="{{dismiss}}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+</div>
+</sc-if>
+
+<header class="wrap hd">
+<div class="hd-top">
+<a class="wm" href="#top"><i aria-hidden="true"></i>[church name]</a>
+<div class="hd-r"><a class="srch" href="search.html" aria-label="Search"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span>Search</span></a><a class="btn sm" href="offerings.html">Offering</a></div>
+</div>
+<nav class="menu" aria-label="Main">
+<a href="#message">Today's Message</a>
+<a href="#week">Services</a>
+<a href="bible-study.html">Bible Study</a>
+<a href="sermons.html">Sermons</a>
+<a href="events.html">Events</a>
+<a href="prayer.html">Prayer</a>
+<a href="testimonies.html">Testimonies</a>
+<a href="im-new.html">I'm New</a>
+</nav>
+</header>
+<sc-if value="{{stk.show}}">
+<div class="stk">
+<div class="stk-in">
+<a class="stk-wm" href="#top"><i aria-hidden="true"></i>[church name]</a>
+<nav class="stk-menu" aria-label="Main menu, compact">
+<a href="#message">Today's Message</a>
+<a href="#week">Services</a>
+<a href="bible-study.html">Bible Study</a>
+<a href="sermons.html">Sermons</a>
+<a href="events.html">Events</a>
+<a href="prayer.html">Prayer</a>
+<a href="testimonies.html">Testimonies</a>
+<a href="im-new.html">I'm New</a>
+</nav>
+<a class="stk-btn" href="offerings.html">Offering</a>
+</div>
+</div>
+</sc-if>
+
+<main id="main">
+<h1 class="sr" id="top">[Church Name], a church on Frederick Road in Catonsville, Maryland</h1>
+
+<sc-if value="{{live}}" hint-placeholder-val="{{ false }}">
+<section class="navy live" aria-labelledby="h-live">
+<div class="wrap">
+<div class="player"><svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M10 8.5l5 3.5-5 3.5z"></path></svg><span>[YouTube live player: the stream plays here, muted until you tap]</span></div>
+<div>
+<h2 id="h-live" class="d" style="font-size: var(--fs-h); margin: 0">sunday service is live</h2>
+<p style="margin: 18px 0 28px; color: var(--onnavy2)"><span class="dot" aria-hidden="true"></span>Streaming now from 6400B Frederick Road. Tap the player to turn the sound on.</p>
+<div class="wa"><a class="btn" href="#prayer">Send a prayer request</a><a class="tl" href="#youtube">Open on YouTube</a></div>
+</div>
+</div>
+</section>
+</sc-if>
+
+<section class="navy msg" id="message" aria-labelledby="h-msg">
+<div class="wrap msg-in">
+<div class="msg-tx">
+<h2 id="h-msg" class="d mh">today's message</h2>
+<h3 class="d mt">faith on the road</h3>
+<p class="mmeta">Sunday, October 25 · [Pastor's name] · Luke 24:13–35</p>
+<p class="msyn">Two friends walked away from Jerusalem with their hopes in pieces, and Jesus walked beside them before they knew who he was. He still meets us on ordinary roads, opens the Scriptures to us, and turns us back toward home.</p>
+<div class="ma"><a class="btn" href="todays-message.html">Read the full message</a><a class="tl" href="todays-message.html#previous">Previous messages</a></div>
+</div>
+<figure class="verse">
+<blockquote>Did not our heart burn within us, while he talked with us by the way, and while he opened to us the scriptures?</blockquote>
+<figcaption>Luke 24:32 (KJV)</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="h-week" id="week">
+<div class="wrap">
+<div class="cat"><h2 id="h-week" class="d hh">services &amp; meetings</h2><span class="cnt">{{timesLabel}}</span></div>
+<div class="wk">
+
+<div class="it a-sun">
+<span class="bul" aria-hidden="true"><svg viewBox="0 0 72 88"><rect width="72" height="88" fill="#E6A82A"></rect><path d="M20 88V50a16 16 0 0 1 32 0v38" fill="#0B1830"></path><path d="M36 34v54M20 64h32" stroke="#E6A82A" stroke-width="3"></path></svg></span>
+<div><div class="itl"><strong>Sunday Service</strong><span class="tm">{{t.sun.day}} · {{t.sun.time}}</span></div>
+<sc-if value="{{t.sun.hasNote}}" hint-placeholder-val="{{ true }}"><p class="tz">{{t.sun.note}}</p></sc-if>
+<p class="ds">Worship, prayer and preaching at 6400B Frederick Road, and live on this website. Children are welcome, and greeters will show you around.</p>
+<p class="lk"><a class="tl" href="im-new.html">Plan your visit</a><a class="tl" href="sermons.html">Past Services</a><a class="tl" href="#add-to-calendar">Add to calendar</a></p></div>
+</div>
+
+<div class="it a-bib">
+<span class="bul" aria-hidden="true"><svg viewBox="0 0 72 88"><rect width="72" height="88" fill="#0B1830"></rect><path d="M12 62c9-5 16-5 24 0 8-5 15-5 24 0V36c-9-5-16-5-24 0-8-5-15-5-24 0z" fill="#E6A82A"></path><path d="M36 36v26" stroke="#0B1830" stroke-width="2.5"></path></svg></span>
+<div><div class="itl"><strong>Bible Study</strong><span class="tm">{{t.bib.day}} · {{t.bib.time}}</span></div>
+<sc-if value="{{t.bib.hasNote}}" hint-placeholder-val="{{ true }}"><p class="tz">{{t.bib.note}}</p></sc-if>
+<p class="ds">On Zoom, from wherever you are.</p>
+<div class="study">
+<h4>This week's study</h4>
+<p class="st">nothing can separate us</p>
+<p class="sp">Romans 8:18–39</p>
+<p class="sum">Paul looks honestly at suffering and still says that nothing in all creation can separate us from the love of God. We read the passage together, then talk about holding on to hope when life is hard.</p>
+<h4 style="margin-bottom: 8px">Earlier in our study of Romans</h4>
+<ul class="recent">
+<li><a href="bible-study.html#romans-8-1">Life in the Spirit · Romans 8:1–17<span>Oct 20</span></a></li>
+<li><a href="bible-study.html#romans-7">The struggle within · Romans 7:14–25<span>Oct 13</span></a></li>
+<li><a href="bible-study.html#romans-6">Alive to God · Romans 6:1–14<span>Oct 6</span></a></li>
+</ul>
+</div>
+<p class="lk"><a class="tl" href="#zoom-bible-study">Join on Zoom</a><a class="tl" href="bible-study.html">Past Bible Studies</a><a class="tl" href="reminders.html">Email me a reminder</a></p></div>
+</div>
+
+<div class="it a-pra">
+<span class="bul" aria-hidden="true"><svg viewBox="0 0 72 88"><rect width="72" height="88" fill="#EFEADF"></rect><rect x="29" y="46" width="14" height="34" fill="#0B1830"></rect><path d="M36 22c7 8 7 14 0 20-7-6-7-12 0-20z" fill="#E6A82A"></path></svg></span>
+<div><div class="itl"><strong>Prayer Meeting</strong><span class="tm">{{t.pra.day}} · {{t.pra.time}}</span></div>
+<sc-if value="{{t.pra.hasNote}}" hint-placeholder-val="{{ true }}"><p class="tz">{{t.pra.note}}</p></sc-if>
+<p class="ds">On Zoom. Bring what is on your heart, or send it to the prayer team ahead of time.</p>
+<p class="lk"><a class="tl" href="#zoom-prayer">Join on Zoom</a><a class="tl" href="#prayer">Prayer Request</a></p></div>
+</div>
+
+<div class="it a-liv">
+<span class="bul" aria-hidden="true"><svg viewBox="0 0 72 88"><rect width="72" height="88" fill="#16294A"></rect><rect x="12" y="34" width="48" height="32" fill="#EFEADF"></rect><path d="M31 42l12 8-12 8z" fill="#0B1830"></path></svg></span>
+<div><div class="itl"><strong>Live stream</strong><span class="tm">{{t.sun.day}} · {{t.sun.time}}</span></div>
+<p class="ds">Watch the Sunday service live, right here on the website.</p>
+<p class="lk"><a class="tl" href="watch.html">Watch online</a></p></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="sec toneb" aria-labelledby="h-events" id="events">
+<div class="wrap show">
+<div class="evl">
+<h2 id="h-events" class="d evh">coming up</h2>
+<ul style="list-style: none; margin: 0; padding: 0">
+<sc-for list="{{events}}" as="e" hint-placeholder-count="3">
+<li><button type="button" class="evn {{e.cls}}" aria-pressed="{{e.pressed}}" onClick="{{e.pick}}"><i aria-hidden="true"></i>{{e.short}}</button></li>
+</sc-for>
+</ul>
+<p class="evc"><a class="tl" href="events.html">See all events</a></p>
+</div>
+<sc-for list="{{events}}" as="e" hint-placeholder-count="1">
+<sc-if value="{{e.active}}" hint-placeholder-val="{{ true }}">
+<div class="stage">
+<div class="poster" role="img" aria-label="{{e.alt}}">
+<div class="pin" style="{{e.posterStyle}}">
+<p class="d pdate">{{e.posterDate}}</p>
+<p class="d ptitle">{{e.posterTitle}}</p>
+</div>
+</div>
+</div>
+<div class="fact">
+<p style="font-weight: 700; font-size: var(--fs-l); line-height: 1.2">{{e.title}}</p>
+<p>{{e.when}}</p>
+<p style="color: var(--muted)">{{e.place}}</p>
+<a class="btn sm" href="event-detail.html">Register</a>
+</div>
+</sc-if>
+</sc-for>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="h-tst" id="testimonies">
+<div class="wrap tst">
+<div class="portrait rv" role="img" aria-label="Testimony about healing"><span class="d">healing</span></div>
+<div class="quote">
+<h2 id="h-tst" class="d hh rv">testimonies</h2>
+<blockquote class="rv2">[An approved testimony appears here, in the member's own words, trimmed to about forty words with a link to the full story.]</blockquote>
+<p class="attr rv2">[First name L.] <span>· Member · [Month year]</span></p>
+<div class="tsa rv2"><a class="btn" href="testimony.html">Share your testimony</a><a class="tl" href="testimonies.html">Read more testimonies</a></div>
+<p class="note rv2">Members and visitors can share. Nothing is published until our ministry team has read it.</p>
+</div>
+</div>
+</section>
+
+<section class="sec navy" aria-labelledby="h-watch" id="watch">
+<div class="wrap watch">
+<div class="wtx">
+<h2 id="h-watch" class="d hh rv">sermons &amp; bible studies</h2>
+<p class="first rv2">Every Sunday service and Tuesday Bible study is kept here to watch again, with notes and discussion.</p>
+<div class="wa rv2"><a class="btn" href="sermons.html">Watch Past Sermons</a><a class="tl" href="bible-study.html">Browse Past Bible Studies</a></div>
+<p class="fol rv2"><a class="tl" href="#youtube">YouTube</a><a class="tl" href="#facebook">Facebook</a><a class="tl" href="#instagram">Instagram</a></p>
+</div>
+<div class="frame-col">
+<div class="frame" role="img" aria-label="Latest sermon: faith on the road, October 25">
+<div class="slide s1" style="background: #E6A82A; color: #0B1830"><p class="d">faith on the road</p><p>Sunday sermon · Oct 25</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="h-prayer" id="prayer">
+<div class="wrap">
+<div class="coupon">
+<div class="cl">
+<h2 id="h-prayer" class="d">send a prayer request</h2>
+<p>Our prayer team prays over every request during the week. Mark yours private and only the pastors will read it. Prefer to talk now? <a class="tl" href="#tawk" onClick="{{openChat}}">Chat with us</a>.</p>
+</div>
+<div class="cr">
+<sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}">
+<form>
+<div class="fl"><label for="p-name">Your name (optional)</label><input id="p-name" class="in" type="text" autocomplete="name"></div>
+<div class="fl"><label for="p-email">Email, if you would like a reply</label><input id="p-email" class="in" type="email" autocomplete="email"></div>
+<div class="fl"><label for="p-req">Your request</label><textarea id="p-req" class="in" rows="4"></textarea></div>
+<label class="chk"><input type="checkbox">Keep this private: pastors only</label>
+<div class="ts"><b aria-hidden="true"></b><span>Verify you are human</span></div>
+<button type="button" class="sub" onClick="{{send}}">Send to the prayer team</button>
+</form>
+</sc-if>
+<sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+<div class="sent"><h3 class="d">we will pray with you</h3><p style="margin: 0; color: var(--onnavy2)">Your request reached the prayer team. If you left an email, someone may write to you this week.</p><p style="margin: 8px 0 0"><button type="button" class="tl" style="background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: var(--onnavy)" onClick="{{again}}">Send another request</button></p></div>
+</sc-if>
+</div>
+</div>
+</div>
+</section>
+
+<a class="give" href="offerings.html" aria-label="Give an offering online">
+<span class="gs">Give your tithes and offerings online, in any amount and any currency. Card payments are handled securely by Stripe.</span>
+<span class="ga" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+<span class="d gw" aria-hidden="true">give</span>
+</a>
+
+<section class="sec" aria-labelledby="h-find" id="visit">
+<div class="wrap find">
+<div class="ftx">
+<h2 id="h-find" class="d hh rv">find us on frederick road</h2>
+<address class="rv2">6400B Frederick Road<br>Catonsville, MD 21228</address>
+<dl class="tim rv2">
+<dt>Sunday Service</dt><dd>{{t.sun.both}}</dd>
+<dt>Bible Study</dt><dd>{{t.bib.both}}, on Zoom</dd>
+<dt>Prayer Meeting</dt><dd>{{t.pra.both}}, on Zoom</dd>
+</dl>
+<p class="rv2" style="margin: 0 0 24px">[Phone number] · [Email address]<br><span style="color: var(--muted)">[Parking: where to park and which door to use]</span></p>
+<div class="fa rv2"><a class="btn" href="im-new.html">Plan your first visit</a><a class="tl" href="https://maps.google.com/?q=6400B+Frederick+Road+Catonsville+MD+21228">Get directions</a></div>
+</div>
+<div class="mapc">
+<div class="map" role="img" aria-label="Sketch map of Frederick Road with the church at 6400B">
+<svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice">
+<rect width="500" height="400" fill="#EFEADF"></rect>
+<path d="M-20 120 L520 190" stroke="#D9D2C2" stroke-width="10"></path>
+<path d="M140 -20 L170 420" stroke="#D9D2C2" stroke-width="10"></path>
+<path d="M360 -20 L335 420" stroke="#D9D2C2" stroke-width="10"></path>
+<path id="fr" d="M-40 330 C 120 300, 260 250, 540 180" stroke="#0B1830" stroke-width="28" fill="none"></path>
+<text font-family="Figtree, sans-serif" font-size="19" font-weight="700" fill="#EFEADF" dy="7"><textPath href="#fr" startOffset="8%">Frederick Road</textPath></text>
+<path d="M276 240 V178 a26 26 0 0 1 52 0 V240 z" fill="#E6A82A" stroke="#0B1830" stroke-width="4"></path>
+<text x="302" y="168" text-anchor="middle" font-family="League Spartan, sans-serif" font-size="28" font-weight="700" fill="#0B1830" dy="-34">6400B</text>
+</svg>
+</div>
+<p class="mapnote">Sketch, not to scale. The live site shows a Google map here.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="navy foot">
+<div class="wrap">
+<div class="mark" aria-hidden="true">
+<sc-for list="{{arches}}" as="a" hint-placeholder-count="9"><i style="{{a.style}}"></i></sc-for>
+</div>
+<div class="fcols">
+<div class="fc"><strong>Gather</strong><a href="#week">Services</a><a href="events.html">Events</a><a href="im-new.html">I'm New</a><a href="#visit">Find us</a></div>
+<div class="fc"><strong>Grow</strong><a href="todays-message.html">Today's Message</a><a href="bible-study.html">Bible Study</a><a href="sermons.html">Sermons</a><a href="prayer.html">Prayer</a></div>
+<div class="fc"><strong>More</strong><a href="offerings.html">Offering</a><a href="testimonies.html">Testimonies</a><a href="about.html">About us</a><a href="contact.html">Contact</a><a href="search.html">Search</a><a href="privacy.html">Privacy</a><button type="button" class="cklink" onClick="{{openCookies}}">Cookie settings</button></div>
+<div class="fc"><strong>Follow</strong><a href="#youtube">YouTube</a><a href="#facebook">Facebook</a><a href="#instagram">Instagram</a><a href="#newsletter">Email updates</a></div>
+<div class="fad"><p><strong>[Church Name]</strong></p><p>6400B Frederick Road<br>Catonsville, MD 21228, USA</p><p>[Phone number]<br>[Email address]</p></div>
+</div>
+<div class="flast"><span>© 2026 [Church Name]</span><a class="btn sm" href="login.html">Log in</a></div>
+</div>
+</footer>
+
+<sc-if value="{{chatOpen}}">
+<section class="tk" id="tawk" aria-label="Contact us chat">
+<div class="tkh"><div><strong>[Church Name]</strong><span>We usually reply within a few minutes</span></div><button type="button" class="tkx" aria-label="Minimise chat" onClick="{{toggleChat}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+<sc-if value="{{chatAllowed}}">
+<div class="tkb" aria-live="polite">
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="1"><p class="{{m.cls}}">{{m.text}}</p></sc-for>
+</div>
+<div class="tkf"><label class="sr" for="tk-in">Your message</label><textarea id="tk-in" rows="2" placeholder="Type your message" value="{{chatDraft}}" onInput="{{typeChat}}"></textarea><button type="button" class="tks" onClick="{{sendChat}}" disabled="{{cantSend}}">Send</button></div>
+<p class="tkn">Preview. The live site shows the Tawk.to chat here.</p>
+</sc-if>
+<sc-if value="{{chatBlocked}}">
+<div class="tkb">
+<p class="tkm">Live chat is run by Tawk.to, which uses cookies. Allow live chat to start a conversation with the church.</p>
+<button type="button" class="ckbtn yes" onClick="{{allowChat}}">Allow live chat</button>
+<p class="tkm2">Or email us at [Email address], or call [Phone number].</p>
+</div>
+</sc-if>
+</section>
+</sc-if>
+<sc-if value="{{showLauncher}}">
+<button type="button" class="chat" aria-expanded="{{chatExpanded}}" aria-controls="tawk" onClick="{{toggleChat}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span>{{chatLabel}}</span></button>
+</sc-if>
+<sc-if value="{{ck.open}}">
+<section class="ck" role="dialog" aria-modal="false" aria-labelledby="ck-h" aria-describedby="ck-d">
+<h2 id="ck-h">your privacy</h2>
+<sc-if value="{{ck.simple}}">
+<p id="ck-d">We use cookies to keep this site safe and working. With your permission, we would also like to use them for live chat (Tawk.to), for videos, posts and maps from YouTube, Facebook, Instagram and Google, and to count visits with Google Analytics. We never sell your data. <a href="privacy.html">Privacy policy</a></p>
+<div class="ckb"><button type="button" class="ckbtn yes" onClick="{{ck.all}}">Accept all</button><button type="button" class="ckbtn no" onClick="{{ck.none}}">Reject all</button></div>
+<button type="button" class="cktl" onClick="{{ck.custom}}">Choose which cookies</button>
+</sc-if>
+<sc-if value="{{ck.detail}}">
+<p id="ck-d">Choose what you are happy with. You can change this at any time from Cookie settings at the bottom of the page. <a href="privacy.html">Privacy policy</a></p>
+<ul class="ckl">
+<li><div><strong>Needed for the site</strong><span>Security checks (Cloudflare Turnstile), secure giving (Stripe) and remembering this choice. Always on.</span></div><button type="button" class="sw" role="switch" aria-checked="true" aria-label="Needed for the site, always on" disabled></button></li>
+<sc-for list="{{ck.rows}}" as="r" hint-placeholder-count="3"><li><div><strong>{{r.name}}</strong><span>{{r.desc}}</span></div><button type="button" class="sw" role="switch" aria-checked="{{r.on}}" aria-label="{{r.name}}" onClick="{{r.flip}}"></button></li></sc-for>
+</ul>
+<div class="ckb"><button type="button" class="ckbtn yes" onClick="{{ck.save}}">Save my choices</button><button type="button" class="ckbtn no" onClick="{{ck.all}}">Accept all</button></div>
+</sc-if>
+</section>
+</sc-if>
+</div>
+</template>
+<noscript><p style="padding:24px;font-family:system-ui,sans-serif">Please turn on JavaScript to view this page.</p></noscript>
+<script>
+/* Tiny page runtime: fills the page template from the page's data and keeps it up to date. */
+(function () {
+  var WHOLE = /^\s*\{\{\s*([^{}]+?)\s*\}\}\s*$/;
+  var ANY = /\{\{\s*([^{}]+?)\s*\}\}/g;
+
+  function lookup(scope, path) {
+    path = path.trim();
+    if (path === 'true') return true;
+    if (path === 'false') return false;
+    if (path === 'null') return null;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    if (/^(['"]).*\1$/.test(path)) return path.slice(1, -1);
+    var parts = path.split('.');
+    var v = scope;
+    for (var i = 0; i < parts.length; i++) {
+      if (v == null) return undefined;
+      v = v[parts[i]];
+    }
+    return v;
+  }
+
+  function fill(str, scope) {
+    return str.replace(ANY, function (m, p) {
+      var v = lookup(scope, p);
+      return v == null ? '' : String(v);
+    });
+  }
+
+  function build(node, scope, out) {
+    if (node.nodeType === 3) {
+      var t = node.nodeValue;
+      out.push(document.createTextNode(t.indexOf('{{') > -1 ? fill(t, scope) : t));
+      return;
+    }
+    if (node.nodeType !== 1) return;
+    var tag = node.localName;
+    if (tag === 'sc-for') {
+      var m = (node.getAttribute('list') || '').match(WHOLE);
+      var list = (m && lookup(scope, m[1])) || [];
+      var as = node.getAttribute('as') || 'item';
+      list.forEach(function (item, i) {
+        var s = Object.create(scope);
+        s[as] = item;
+        s.$index = i;
+        node.childNodes.forEach(function (c) { build(c, s, out); });
+      });
+      return;
+    }
+    if (tag === 'sc-if') {
+      var mv = (node.getAttribute('value') || '').match(WHOLE);
+      if (mv && lookup(scope, mv[1])) node.childNodes.forEach(function (c) { build(c, scope, out); });
+      return;
+    }
+    var el = node.cloneNode(false);
+    el.__h = {};
+    Array.prototype.slice.call(el.attributes).forEach(function (a) {
+      var name = a.name;
+      var val = a.value;
+      if (name.indexOf('hint-') === 0) { el.removeAttribute(name); return; }
+      if (val.indexOf('{{') === -1) return;
+      var w = val.match(WHOLE);
+      if (w) {
+        var v = lookup(scope, w[1]);
+        if (name.indexOf('on') === 0) {
+          el.removeAttribute(name);
+          if (typeof v === 'function') el.__h[name.slice(2)] = v;
+          return;
+        }
+        if (v === false || v == null) el.removeAttribute(name);
+        else if (v === true) el.setAttribute(name, '');
+        else el.setAttribute(name, String(v));
+      } else {
+        el.setAttribute(name, fill(val, scope));
+      }
+    });
+    if (el.localName === 'textarea' && el.hasAttribute('value')) el.value = el.getAttribute('value');
+    var kids = [];
+    node.childNodes.forEach(function (c) { build(c, scope, kids); });
+    kids.forEach(function (k) { el.appendChild(k); });
+    if (el.localName === 'select' && el.hasAttribute('value')) el.value = el.getAttribute('value');
+    out.push(el);
+  }
+
+  function firstClass(el) {
+    return ((el.getAttribute && el.getAttribute('class')) || '').split(' ')[0];
+  }
+
+  function same(a, b) {
+    if (a.nodeType !== b.nodeType) return false;
+    if (a.nodeType !== 1) return true;
+    return a.localName === b.localName && a.namespaceURI === b.namespaceURI && firstClass(a) === firstClass(b) && (a.id || '') === (b.id || '');
+  }
+
+  // Matches old and new children so that a block appearing or disappearing
+  // does not rebuild everything after it (which would lose focus and typing).
+  function morphChildren(oldP, list) {
+    for (var i = 0; i < list.length; i++) {
+      var n = list[i];
+      var o = oldP.childNodes[i];
+      if (!o) { oldP.appendChild(n); continue; }
+      if (!same(o, n)) {
+        var j, ahead = -1, behind = -1;
+        for (j = i + 1; j < Math.min(list.length, i + 10); j++) { if (same(o, list[j])) { ahead = j; break; } }
+        if (ahead > -1 && o.nodeType === 1) { oldP.insertBefore(n, o); continue; }
+        for (j = i + 1; j < Math.min(oldP.childNodes.length, i + 10); j++) { if (same(oldP.childNodes[j], n)) { behind = j; break; } }
+        if (behind > -1 && n.nodeType === 1) {
+          for (var k = i; k < behind; k++) oldP.removeChild(oldP.childNodes[i]);
+          o = oldP.childNodes[i];
+        } else if (ahead > -1) {
+          oldP.insertBefore(n, o);
+          continue;
+        } else {
+          oldP.replaceChild(n, o);
+          continue;
+        }
+      }
+      if (o.nodeType === 3) { if (o.nodeValue !== n.nodeValue) o.nodeValue = n.nodeValue; continue; }
+      morphEl(o, n);
+    }
+    while (oldP.childNodes.length > list.length) oldP.removeChild(oldP.lastChild);
+  }
+
+  function morphEl(o, n) {
+    Array.prototype.slice.call(o.attributes).forEach(function (a) {
+      if (!n.hasAttribute(a.name)) o.removeAttribute(a.name);
+    });
+    Array.prototype.slice.call(n.attributes).forEach(function (a) {
+      if (o.getAttribute(a.name) !== a.value) o.setAttribute(a.name, a.value);
+    });
+    o.__h = n.__h;
+    if ((o.localName === 'input' || o.localName === 'textarea' || o.localName === 'select') && n.hasAttribute('value') && o !== document.activeElement && o.value !== n.getAttribute('value')) {
+      o.value = n.getAttribute('value');
+    }
+    if (o.localName === 'textarea' || o.localName === 'input' || o.localName === 'select') return;
+    morphChildren(o, Array.prototype.slice.call(n.childNodes));
+  }
+
+  var app, tpl, comp, queued = false;
+
+  function render() {
+    queued = false;
+    var vals = comp.renderVals();
+    var out = [];
+    tpl.content.childNodes.forEach(function (c) { build(c, vals, out); });
+    morphChildren(app, out);
+  }
+
+  function schedule() {
+    if (queued) return;
+    queued = true;
+    Promise.resolve().then(render);
+  }
+
+  window.PageLogic = function PageLogic(props) {
+    this.props = props || {};
+    this.state = {};
+  };
+  window.PageLogic.prototype.setState = function (p) {
+    var u = typeof p === 'function' ? p(this.state, this.props) : p;
+    this.state = Object.assign({}, this.state, u);
+    schedule();
+  };
+  window.PageLogic.prototype.forceUpdate = function () { schedule(); };
+
+  window.__boot = function (Component, props) {
+    app = document.getElementById('app');
+    tpl = document.getElementById('tpl');
+    comp = new Component(props || {});
+    ['click', 'input', 'change'].forEach(function (type) {
+      app.addEventListener(type, function (e) {
+        var t = e.target;
+        while (t && t !== app) {
+          if (t.__h && t.__h[type]) { t.__h[type](e); break; }
+          t = t.parentNode;
+        }
+      });
+    });
+    render();
+    if (typeof comp.componentDidMount === 'function') comp.componentDidMount();
+  };
+})();
+</script>
+<script>
+class Component extends PageLogic {
+  constructor(props) {
+    super(props);
+    this.state = { notice: true, ev: 0, sent: false };
+  }
+  visitorTz() {
+    const map = { 'Lagos': 'Africa/Lagos', 'New York': 'America/New_York', 'London': 'Europe/London', 'Los Angeles': 'America/Los_Angeles' };
+    const pick = this.props.visitor || 'auto';
+    if (map[pick]) return map[pick];
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      new Intl.DateTimeFormat('en-US', { timeZone: tz }).format(new Date());
+      return tz || 'America/New_York';
+    } catch (e) {
+      return 'America/New_York';
+    }
+  }
+  cityOf(tz) {
+    if (tz === 'America/New_York') return 'New York';
+    const last = String(tz).split('/').pop() || 'New York';
+    return last.replace(/_/g, ' ');
+  }
+  partsIn(date, tz) {
+    const o = {};
+    new Intl.DateTimeFormat('en-US', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(date).forEach((p) => { o[p.type] = p.value; });
+    return o;
+  }
+  nextNY(weekday, hh, mm) {
+    const tz = 'America/New_York';
+    const p = this.partsIn(new Date(), tz);
+    const wd = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
+    let add = (weekday - wd + 7) % 7;
+    if (add === 0 && (Number(p.hour) % 24) * 60 + Number(p.minute) > hh * 60 + mm + 90) add = 7;
+    const base = Date.UTC(Number(p.year), Number(p.month) - 1, Number(p.day) + add, hh, mm);
+    const off = (t) => { const q = this.partsIn(new Date(t), tz); return Date.UTC(Number(q.year), Number(q.month) - 1, Number(q.day), Number(q.hour) % 24, Number(q.minute)) - t; };
+    let t = base - off(base);
+    t = base - off(t);
+    return new Date(t);
+  }
+  clock(date, tz) {
+    const o = {};
+    new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', hour: 'numeric', minute: '2-digit' }).formatToParts(date).forEach((p) => { o[p.type] = p.value; });
+    return { day: o.weekday, time: ((o.hour || '') + ':' + (o.minute || '') + ' ' + (o.dayPeriod || '')).trim().toLowerCase() };
+  }
+  slot(weekday, hh, mm) {
+    const fallbackDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][weekday];
+    try {
+      const tz = this.visitorTz();
+      const city = this.cityOf(tz);
+      const d = this.nextNY(weekday, hh, mm);
+      const here = this.clock(d, tz);
+      const ny = this.clock(d, 'America/New_York');
+      const same = here.day === ny.day && here.time === ny.time;
+      return {
+        day: here.day,
+        time: here.time + ' ' + city,
+        hasNote: !same,
+        note: same ? '' : ny.day + ' ' + ny.time + ' in New York',
+        both: same ? here.day + ' ' + here.time + ' ' + city : here.day + ' ' + here.time + ' ' + city + ' · ' + ny.time + ' New York'
+      };
+    } catch (e) {
+      const h12 = ((hh + 11) % 12) + 1;
+      const time = h12 + ':' + String(mm).padStart(2, '0') + (hh < 12 ? ' am' : ' pm');
+      return { day: fallbackDay, time: time + ' New York', hasNote: false, note: '', both: fallbackDay + ' ' + time + ' New York' };
+    }
+  }
+  pageVals(consent) {
+    const tz = this.visitorTz();
+    const data = [
+      { short: 'thanksgiving sunday', title: 'Thanksgiving Sunday Service', when: 'Sunday, November 22 · 10:30 am New York', place: '6400B Frederick Road, and live online', posterDate: 'nov 22', posterTitle: 'thanksgiving sunday', bg: '#E6A82A', fg: '#0B1830' },
+      { short: 'christmas carols', title: 'Christmas Carol Service', when: 'Sunday, December 20 · [time]', place: '6400B Frederick Road', posterDate: 'dec 20', posterTitle: 'christmas carol service', bg: '#0B1830', fg: '#E6A82A' },
+      { short: 'watch night', title: 'Watch Night Service', when: 'Thursday, December 31 · [time]', place: '6400B Frederick Road, and live online', posterDate: 'dec 31', posterTitle: 'watch night service', bg: '#2B4470', fg: '#F4F1EA' }
+    ];
+    const ev = this.state.ev % data.length;
+    const msgs = this.state.msgs || [{ cls: 'them', text: 'Hello, and welcome. How can we help today? Ask about a visit, prayer, giving or anything else.' }];
+    const events = data.map((d, i) => ({
+      ...d,
+      active: i === ev,
+      cls: i === ev ? 'on' : '',
+      pressed: i === ev ? 'true' : 'false',
+      alt: d.title + ', ' + d.when,
+      posterStyle: 'background: ' + d.bg + '; color: ' + d.fg,
+      pick: () => this.setState({ ev: i })
+    }));
+    const arches = [
+      ['62%', '#E6A82A'], ['84%', '#16294A'], ['100%', '#EFEADF'], ['74%', '#2B4470'], ['92%', '#E6A82A'],
+      ['68%', '#EFEADF'], ['100%', '#16294A'], ['80%', '#E6A82A'], ['58%', '#2B4470']
+    ].map(([h, c]) => ({ style: 'height: ' + h + '; background: ' + c }));
+    return {
+      live: this.props.live ?? false,
+      showNotice: (this.props.announcement ?? true) && this.state.notice,
+      dismiss: () => this.setState({ notice: false }),
+      timesLabel: 'Times shown in ' + this.cityOf(tz) + ' time',
+      t: {
+        sun: this.slot(0, 10, 30),
+        bib: this.slot(2, 18, 0),
+        pra: this.slot(5, 19, 0)
+      },
+      events,
+      notSent: !this.state.sent,
+      sent: this.state.sent,
+      send: () => this.setState({ sent: true }),
+      again: () => this.setState({ sent: false }),
+      arches,
+      showLauncher: !consent.ck.open,
+      chatOpen: !!this.state.chatOpen && !consent.ck.open,
+      chatExpanded: this.state.chatOpen ? 'true' : 'false',
+      chatLabel: this.state.chatOpen ? 'Close' : 'Contact us',
+      toggleChat: () => this.setState({ chatOpen: !this.state.chatOpen }),
+      openChat: () => this.setState({ chatOpen: true }),
+      chatBlocked: !consent.chatAllowed,
+      msgs,
+      chatDraft: this.state.chatDraft || '',
+      cantSend: !(this.state.chatDraft || '').trim(),
+      typeChat: (e) => this.setState({ chatDraft: e.target.value }),
+      sendChat: () => {
+        const t = (this.state.chatDraft || '').trim();
+        if (!t) return;
+        const next = msgs.concat([{ cls: 'me', text: t }]);
+        if (!msgs.some((m) => m.cls === 'me')) next.push({ cls: 'them', text: 'Thank you. Someone from the church will answer here shortly. If we are away, leave your email and we will write back.' });
+        this.setState({ chatDraft: '', msgs: next });
+      },
+      allowChat: () => this.ckSet(Object.assign({}, this._ckSaved || {}, { chat: true }))
+    };
+  }
+  ckRead() {
+    try {
+      const v = JSON.parse(window.localStorage.getItem('church-consent-v1') || 'null');
+      if (v && typeof v === 'object') return v;
+    } catch (e) {}
+    return null;
+  }
+  ckSet(v) {
+    const rec = { chat: !!v.chat, media: !!v.media, analytics: !!v.analytics, at: new Date().toISOString() };
+    try { window.localStorage.setItem('church-consent-v1', JSON.stringify(rec)); } catch (e) {}
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { analytics_storage: rec.analytics ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      }
+    } catch (e) {}
+    this._ckSaved = rec;
+    this.setState({ ckOpen: false, ckView: 'simple', ckDraft: null });
+  }
+  consentVals() {
+    if (!this._ckLoaded) { this._ckLoaded = true; this._ckSaved = this.ckRead(); }
+    const saved = this._ckSaved;
+    const open = !saved || !!this.state.ckOpen;
+    const view = this.state.ckView || 'simple';
+    const draft = this.state.ckDraft || saved || { chat: false, media: false, analytics: false };
+    const defs = [
+      ['chat', 'Live chat', 'Tawk.to, for the Contact us chat.'],
+      ['media', 'Videos, posts and maps', 'The YouTube live stream and sermons, Facebook and Instagram posts, and Google Maps.'],
+      ['analytics', 'Visit counts', 'Google Analytics, so we can see which pages help people. No advertising.']
+    ];
+    const rows = defs.map(([k, name, desc]) => ({
+      name, desc,
+      on: draft[k] ? 'true' : 'false',
+      flip: () => this.setState({ ckDraft: Object.assign({}, draft, { [k]: !draft[k] }) })
+    }));
+    return {
+      ck: {
+        open, rows,
+        simple: view === 'simple',
+        detail: view === 'detail',
+        all: () => this.ckSet({ chat: true, media: true, analytics: true }),
+        none: () => this.ckSet({ chat: false, media: false, analytics: false }),
+        custom: () => this.setState({ ckView: 'detail', ckDraft: draft }),
+        save: () => this.ckSet(draft)
+      },
+      chatAllowed: !!(saved && saved.chat),
+      openCookies: () => this.setState({ ckOpen: true, ckView: 'detail', ckDraft: null })
+    };
+  }
+  stickyVals() {
+    if (!this._stkInit && typeof window !== 'undefined') {
+      this._stkInit = true;
+      const check = () => {
+        const hd = document.querySelector('header.hd');
+        if (!hd) return;
+        const s = hd.getBoundingClientRect().bottom < 0;
+        if (s !== !!this._stk) { this._stk = s; this.setState({ stkTick: Date.now() }); }
+      };
+      window.addEventListener('scroll', check, { passive: true });
+      window.addEventListener('resize', check);
+      setTimeout(check, 0);
+    }
+    return { stk: { show: !!this._stk } };
+  }
+  renderVals() {
+    const c = this.consentVals();
+    return Object.assign({}, this.pageVals(c), c, this.stickyVals());
+  }
+}
+window.__boot(Component, {"live":false,"announcement":true,"visitor":"auto"});
+</script>
+</body>
+</html>
